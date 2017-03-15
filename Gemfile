@@ -50,4 +50,67 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+# debug
+gem "pry"
+gem "pry-rails"
+gem "awesome_print", require: false
+
+group :development, :test do # 也包含 test 是為了讓寫 test case 時也可以 debug
+  # gem "pry-plus"
+  gem "hirb", require: false
+  gem "hirb-unicode", require: false
+
+  # RSpec
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+end
+
+# User account
+gem 'devise'
+gem 'devise-i18n'
+
+# i18n
+gem "rails-i18n"
+
+# Use for google analytics
+gem 'google-analytics-rails'
+
+# mixpanel
+gem 'mixpanel-ruby'
+
+# form
+gem 'simple_form'
+
+# upload
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+
+# Settings
+gem "settingslogic"
+
+# SEO meta
+gem 'meta-tags'
+
+# sitemap
+gem 'sitemap_generator'
+
+# crontab
+gem 'whenever', :require => false
+
+# pagination
+gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap'
+
+#
+gem 'active_hash'
+gem 'decent_exposure', '3.0.0.beta2'
+
+# Style
+gem 'slim'
+gem 'slim-rails'
+gem 'bootstrap-sass'
+gem 'font-awesome-rails'
+gem 'noty-rails'
