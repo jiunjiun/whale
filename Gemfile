@@ -108,7 +108,7 @@ gem 'will_paginate-bootstrap'
 
 #
 gem 'active_hash'
-gem 'decent_exposure', '3.0.0.beta2'
+gem 'decent_exposure', '3.0.2'
 
 # Style
 gem 'slim'
