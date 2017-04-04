@@ -18,30 +18,6 @@
       == f.input :fb_url, as: :url
       == f.input :gh_url, as: :url
 
-  .panel
-    .panel-heading
-      .panel-title Bots
-    .panel-body
-      #accordion-example.panel-group
-        .panel
-          .panel-heading
-            a.accordion-toggle aria-expanded="true" data-parent="#accordion-example" data-toggle="collapse" href="#collapseOne"
-              | Facebook Messenger
-          #collapseOne.panel-collapse.collapse.in aria-expanded="true"
-            .panel-body
-              = f.simple_fields_for :bots do |bot|
-                == bot.input :shark_id, as: :hidden
-                == bot.input :kind
-                == bot.input :bot_id
-        .panel
-          .panel-heading
-            a.accordion-toggle.collapsed aria-expanded="false" data-parent="#accordion-example" data-toggle="collapse" href="#collapseTwo"
-              | Line
-          #collapseTwo.panel-collapse.collapse aria-expanded="false" style=("height: 0px;")
-            .panel-body
-
-
-
   .panel.colourable
     .panel-body
       .upload.banner.text-center

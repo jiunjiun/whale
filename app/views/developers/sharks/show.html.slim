@@ -19,7 +19,7 @@ ol.breadcrumb.page-breadcrumb
         span.panel-title= t('simple_form.labels.shark.info')
       .panel-body
         /! Table
-        table.table
+        table.table.top_border_none
           tbody
             tr
               td.col-md-3
@@ -67,3 +67,40 @@ ol.breadcrumb.page-breadcrumb
               td.col-md-3
                 = t('simple_form.labels.shark.created_at')
               td.col-md-9= l shark.created_at, format: :ymds
+  .col-md-12
+    .panel
+      .panel-heading
+        span.panel-title Bots
+        .panel-heading-controls
+            = link_to t('helpers.add'), new_developers_shark_bot_path(shark), class: 'btn btn-xs btn-primary'
+      .panel-body
+        #shark_bots.panel-group
+          table.table.table-striped
+            thead
+              tr
+                th.col-md-2
+                th.col-md-1.text-center data-name="kind"
+                  = t('simple_form.labels.bot.kind')
+                th.col-md-3.text-center data-name="bot_id"
+                  = t('simple_form.labels.bot.bot_id')
+                th.col-md-4.text-center data-name="url"
+                  = t('simple_form.labels.bot.url')
+                th.col-md-2.text-center data-name="created_at"
+                  = t('simple_form.labels.bot.created_at')
+            tbody
+            - shark.bots.each do |bot|
+              tr
+                td
+                  .btn-group
+                    = link_to edit_developers_shark_bot_path(shark, bot), class: 'btn btn-xs btn-info btn-3d' do
+                      = t('helpers.edit')
+                    = link_to developers_shark_bot_path(shark, bot), method: :delete, data: {confirm: t('helpers.are_you_sure')}, class: 'btn btn-xs btn-danger btn-3d' do
+                      = t('helpers.delete')
+                td.text-center
+                  = KeyValues::Bot::Kind.find(bot.kind).name
+                td.text-center
+                  = bot.bot_id
+                td.text-center
+                  == bot_link_to(bot)
+                td.text-center
+                  = l bot.created_at, format: :ymds
