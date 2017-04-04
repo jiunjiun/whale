@@ -93,10 +93,11 @@ module KeyValues
   module Bot
     class Kind < KeyValues::Base
       self.data = [
-        {id: 1,  code: 'facebook', name: '處理中'},
-        {id: 2,  code: 'line',     name: '已發佈'},
+        {id: 1,  code: 'facebook', name: 'Facebook'},
+        {id: 2,  code: 'line',     name: 'Line'},
+        {id: 3,  code: 'telegram', name: 'Telegram'},
 
-        {id: 99, code: 'other',    name: '其他'},
+        # {id: 99, code: 'other',    name: '其他'},
       ]
     end
   end
