@@ -10,7 +10,7 @@
 user = User.create email: 'user@user.com', password: '12345678', name: 'haha'
 
 # Shark
-shark = user.sharks.create name: 'Bot', cetacea: KeyValues::Shark::Cetacea.find_by_code('comic').id, desc: 'hahahah', web_url: '', fb_url: '', gh_url: ''
+shark = user.sharks.create name: 'Bot', cetacea: KeyValues::Shark::Cetacea.find_by_code('comic').id, desc: 'hahahah', web_url: '', facebook_url: '', github_url: ''
 
 # Bots
 shark.bots.create kind: KeyValues::Bot::Kind.find_by_code('facebook').id, bot_id: 'facebook_bot'

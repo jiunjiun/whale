@@ -7,7 +7,7 @@ class Developers::BotsController < DeveloperController
   end
 
   def create
-    if bot.save!
+    if bot.save
       redirect_to developers_shark_path(shark), notice: t('helpers.successfully_created')
     else
       render :new

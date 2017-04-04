@@ -29,15 +29,16 @@ ActiveRecord::Schema.define(version: 20170331065756) do
     t.string   "name"
     t.integer  "cetacea"
     t.text     "desc"
-    t.integer  "status",     default: 1
+    t.integer  "status",       default: 1
     t.text     "web_url"
-    t.text     "fb_url"
-    t.text     "gh_url"
+    t.text     "facebook_url"
+    t.text     "github_url"
+    t.text     "youtube_url"
     t.string   "logo"
     t.string   "banner"
     t.integer  "user_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.index ["user_id"], name: "index_sharks_on_user_id", using: :btree
   end
 

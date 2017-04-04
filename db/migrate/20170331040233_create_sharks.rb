@@ -6,8 +6,10 @@ class CreateSharks < ActiveRecord::Migration[5.0]
       t.text     :desc
       t.integer  :status, default: 1
       t.text     :web_url
-      t.text     :fb_url, commit: 'Facebook fans'
-      t.text     :gh_url, commit: 'GitHub Url'
+      t.text     :facebook_url, commit: 'Facebook fans'
+      t.text     :github_url,   commit: 'GitHub Url'
+      t.text     :youtube_url,  commit: 'Youtube Url'
+
       t.string   :logo
       t.string   :banner, commit: 'Facebook og:image'
 

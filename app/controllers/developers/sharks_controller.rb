@@ -12,7 +12,7 @@ class Developers::SharksController < DeveloperController
   end
 
   def create
-    if shark.save!
+    if shark.save
       redirect_to developers_shark_path(shark), notice: t('helpers.successfully_created')
     else
       render :new
