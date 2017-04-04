@@ -1,0 +1,14 @@
+ol.breadcrumb.page-breadcrumb
+  li
+    == link_to t('dashboard'), developers_root_path
+  li
+    == link_to t('shark'), developers_sharks_path
+  li.active
+    = shark.name
+.page-header
+  .pull-left
+    h1= shark.name
+
+.row#sharks
+  .col-lg-12
+    == render 'form_edit'

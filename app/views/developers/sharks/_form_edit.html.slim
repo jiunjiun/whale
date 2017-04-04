@@ -1,0 +1,60 @@
+== simple_form_for([:developers, shark], html: { autocomplete: 'off' }) do |f|
+  .panel.colourable
+    .panel-body
+      .upload.logo.text-center
+        - if shark.logo.url
+          == image_tag shark.logo, alt: shark.name, data: {id: 'logo'}
+        - else
+          img src="holder.js/128x128?theme=sky&text=Logo&auto=yes" alt="" data-id="logo"/
+      .hide
+        == f.input :logo
+      == f.input :name
+      == f.input :cetacea, collection: KeyValues::Shark::Cetacea.id_options, prompt: t('helpers.plz_select')
+      == f.input :desc
+
+  .panel.colourable
+    .panel-body
+      == f.input :web_url, as: :url
+      == f.input :fb_url, as: :url
+      == f.input :gh_url, as: :url
+
+  .panel
+    .panel-heading
+      .panel-title Bots
+    .panel-body
+      #accordion-example.panel-group
+        .panel
+          .panel-heading
+            a.accordion-toggle aria-expanded="true" data-parent="#accordion-example" data-toggle="collapse" href="#collapseOne"
+              | Facebook Messenger
+          #collapseOne.panel-collapse.collapse.in aria-expanded="true"
+            .panel-body
+              = f.simple_fields_for :bots do |bot|
+                == bot.input :shark_id, as: :hidden
+                == bot.input :kind
+                == bot.input :bot_id
+        .panel
+          .panel-heading
+            a.accordion-toggle.collapsed aria-expanded="false" data-parent="#accordion-example" data-toggle="collapse" href="#collapseTwo"
+              | Line
+          #collapseTwo.panel-collapse.collapse aria-expanded="false" style=("height: 0px;")
+            .panel-body
+
+
+
+  .panel.colourable
+    .panel-body
+      .upload.banner.text-center
+        - if shark.banner.url
+          == image_tag shark.banner, alt: shark.name, data: {id: 'banner'}
+        - else
+          img src="holder.js/1200x630?theme=sky&text=Banner(1200x630)&auto=yes" alt="" data-id="banner"/
+      .hide
+        == f.input :banner
+
+  .panel
+    .panel-body
+      .col-md-12
+        == f.button :submit, class: 'btn-success btn-3d'
+        | &nbsp;&nbsp;
+        == link_to t('helpers.back'), developers_sharks_path, class: 'btn btn-default btn-3d'

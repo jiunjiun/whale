@@ -1,0 +1,41 @@
+ol.breadcrumb.page-breadcrumb
+  li
+    == link_to t('dashboard'), developers_root_path
+  li.active
+    = t('shark')
+.page-header
+  .pull-left
+    h1= t('shark')
+  .pull-right
+    == link_to t('helpers.add'), new_developers_shark_path, class: 'btn btn-primary btn-3d'
+
+.row
+  .col-lg-12
+    .panel.colourable
+      .panel-body
+        table.table.table-striped
+          thead
+            tr
+              th.col-md-2
+              th.col-md-7.text-center data-name="name"
+                = t('simple_form.labels.shark.name')
+              th.col-md-2.text-center data-name="created_at"
+                = t('simple_form.labels.shark.created_at')
+          tbody
+          - sharks.each do |shark|
+            tr
+              td
+                .btn-group
+                  = link_to developers_shark_path(shark), class: 'btn btn-xs btn-primary btn-3d' do
+                    = t('helpers.show')
+                  = link_to edit_developers_shark_path(shark), class: 'btn btn-xs btn-info btn-3d' do
+                    = t('helpers.edit')
+                  = link_to developers_shark_path(shark), method: :delete, data: {confirm: t('helpers.are_you_sure')}, class: 'btn btn-xs btn-danger btn-3d' do
+                    = t('helpers.delete')
+              td.text-center
+                = shark.name
+              td.text-center
+                = l shark.created_at, format: :ymds
+
+        .pull-right
+          = will_paginate sharks, renderer: BootstrapPagination::Rails, previous_label: '«', next_label: '»'

@@ -12,7 +12,7 @@ zh-TW:
   back_fontend: 回前台
 
   dashboard:    Dashboard
-  shark:        活動項目
+  shark:
 
   meta:
     desc:
@@ -46,6 +46,7 @@ zh-TW:
     continue:                   繼續
     preview:                    預覽
     link:                       連結
+    plz_select:                 請選擇
 
     successfully_created: 新增成功 # Your profile was successfully created.
     successfully_updated: 更新成功 # Your profile was successfully updated.
@@ -61,9 +62,23 @@ zh-TW:
   simple_form:
     labels:
       shark:
+        name:         名稱
+        desc:         描述
+        cetacea:      類型
+        web_url:      官方網站
+        fb_url:       Facebook 粉絲專頁
+        gh_url:       GitHub
+        created_at:   建立時間
+        updated_at:   最後修改
 
     placeholders:
       shark:
+        name:
+        desc:
+        cetacea:
+        web_url:  http://rubyonrails.org/
+        fb_url:   https://www.facebook.com/
+        gh_url:   https://github.com/rails/rails
 
 
   date:

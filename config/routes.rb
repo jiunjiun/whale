@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  namespace :developers do
+  namespace :developers, path: '/', constraints: { subdomain: 'developer' } do
     root 'dashboards#index'
     resources :dashboards, only: [:index]
-    resources :sharks
+    resources :sharks do
+      resources :bots
+    end
   end
 
   namespace :users do
