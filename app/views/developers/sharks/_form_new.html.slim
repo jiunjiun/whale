@@ -1,5 +1,8 @@
 == simple_form_for([:developers, shark], html: { autocomplete: 'off' }) do |f|
   .panel.colourable
+    /! Default panel contents
+    .panel-heading
+      span.panel-title= t('simple_form.labels.shark.info')
     .panel-body
       .logo.text-center
         img data-src="holder.js/128x128?theme=sky&text=Logo \n 128x128&size=18&auto=yes" alt="" data-id="logo"/

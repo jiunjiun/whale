@@ -1,5 +1,8 @@
 == simple_form_for([:developers, shark], html: { autocomplete: 'off' }) do |f|
   .panel.colourable
+    /! Default panel contents
+    .panel-heading
+      span.panel-title= t('simple_form.labels.shark.info')
     .panel-body
       .upload.logo.text-center
         - if shark.logo.url
@@ -13,6 +16,9 @@
       == f.input :desc
 
   .panel.colourable
+    /! Default panel contents
+    .panel-heading
+      span.panel-title= t('simple_form.labels.shark.other')
     .panel-body
       == f.input :web_url, as: :url
       == f.input :facebook_url, as: :url
@@ -20,8 +26,11 @@
       == f.input :youtube_url, as: :url
 
   .panel.colourable
+    /! Default panel contents
+    .panel-heading
+      span.panel-title= t('simple_form.labels.shark.ad_image')
     .panel-body
-      .upload.banner.text-center
+      .upload.banner
         - if shark.banner.url
           == image_tag shark.banner, alt: shark.name, data: {id: 'banner'}
         - else
