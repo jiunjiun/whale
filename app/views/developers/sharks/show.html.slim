@@ -36,6 +36,17 @@ ol.breadcrumb.page-breadcrumb
               td.col-md-9= shark.name
             tr
               td.col-md-3
+                = t('simple_form.labels.shark.status')
+              td.col-md-9
+                - case shark.status
+                - when Shark::Status::PROCESSING
+                  span.label
+                    = KeyValues::Shark::Status.find(shark.status).name
+                - when Shark::Status::RELEASE
+                  span.label.label-success
+                    = KeyValues::Shark::Status.find(shark.status).name
+            tr
+              td.col-md-3
                 = t('simple_form.labels.shark.cetacea')
               td.col-md-9= KeyValues::Shark::Cetacea.find(shark.cetacea).name
             tr
@@ -122,7 +133,7 @@ ol.breadcrumb.page-breadcrumb
                   == link_to shark.github_url, shark.github_url, target: '_blank'
             tr
               td.col-md-3
-                = t('simple_fortm.labels.shark.youtube_url')
+                = t('simple_form.labels.shark.youtube_url')
               td.col-md-9
                 - if shark.youtube_url
                   == link_to shark.youtube_url, shark.youtube_url, target: '_blank'

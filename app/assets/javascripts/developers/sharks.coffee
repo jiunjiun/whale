@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  handleImage = (e) ->
+  handleSharkImage = (e) ->
     resource = e.target.id.split('_')[-1..]
     reader = new FileReader
     reader.onload = (event) ->
@@ -12,7 +12,7 @@ $ ->
     reader.readAsDataURL(e.target.files[0])
 
   imageLoader = $('#sharks .hide input[type=file]')
-  imageLoader.bind('change', handleImage) if (imageLoader)
+  imageLoader.bind('change', handleSharkImage) if (imageLoader)
 
 
   $('#sharks .upload img').click ->

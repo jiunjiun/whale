@@ -17,8 +17,12 @@ ol.breadcrumb.page-breadcrumb
           thead
             tr
               th.col-md-2
-              th.col-md-7.text-center data-name="name"
+              th.col-md-6.text-center data-name="name"
                 = t('simple_form.labels.shark.name')
+              th.col-md-1.text-center data-name="cetacea"
+                = t('simple_form.labels.shark.cetacea')
+              th.col-md-1.text-center data-name="status"
+                = t('simple_form.labels.shark.status')
               th.col-md-2.text-center data-name="created_at"
                 = t('simple_form.labels.shark.created_at')
           tbody
@@ -33,7 +37,14 @@ ol.breadcrumb.page-breadcrumb
                   = link_to developers_shark_path(shark), method: :delete, data: {confirm: t('helpers.are_you_sure')}, class: 'btn btn-xs btn-danger btn-3d' do
                     = t('helpers.delete')
               td.text-center
+                - if shark.logo.url
+                  span.p-r-1
+                    == image_tag shark.logo, alt: shark.name, size: '24x24'
                 = shark.name
+              td.text-center
+                = KeyValues::Shark::Cetacea.find(shark.cetacea).name
+              td.text-center
+                = KeyValues::Shark::Status.find(shark.status).name
               td.text-center
                 = l shark.created_at, format: :ymds
 

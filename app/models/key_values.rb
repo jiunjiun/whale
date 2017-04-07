@@ -82,7 +82,7 @@ module KeyValues
 
     class Status < KeyValues::Base
       self.data = [
-        {id: 1,  code: 'processing', name: '處理中'},
+        {id: 1,  code: 'processing', name: '未發佈'},
         {id: 2,  code: 'release',    name: '已發佈'},
 
         {id: 99, code: 'delete',     name: '刪除'},

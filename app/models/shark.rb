@@ -8,4 +8,9 @@ class Shark < ApplicationRecord
 
   mount_uploader :logo,   SharkLogoUploader
   mount_uploader :banner, SharkBannerUploader
+
+  module Status
+    PROCESSING = 1
+    RELEASE    = 2
+  end
 end
