@@ -14,6 +14,7 @@ zh-TW:
   dashboard:    Dashboard
   shark:
   shark_photo: 介紹圖片
+  developer_profile: 開發者資訊
 
   meta:
     desc:
@@ -48,6 +49,8 @@ zh-TW:
     preview:                    預覽
     link:                       連結
     plz_select:                 請選擇
+    profile:                    個人資料
+    update_password:            修改密碼
 
     successfully_created: 新增成功 # Your profile was successfully created.
     successfully_updated: 更新成功 # Your profile was successfully updated.
@@ -60,15 +63,21 @@ zh-TW:
       create: 新增
       update: 更新
 
+      user:
+        update: 更新資料
+        update_password: 更新密碼
+
   simple_form:
     labels:
       shark:
         name:         名稱
+        status:       狀態
         desc:         描述
         cetacea:      類型
         web_url:      官方網站
-        fb_url:       Facebook 粉絲專頁
-        gh_url:       GitHub
+        facebook_url: Facebook 粉絲專頁
+        github_url:   GitHub 連結
+        youtube_url:  Youtube 連結
         created_at:   建立時間
         updated_at:   最後修改
         info:         主要資訊
@@ -79,6 +88,12 @@ zh-TW:
         bot_id:     ID
         url:        連結
         created_at: 建立時間
+      user:
+        name:         名稱
+        public_email:
+        location:     您的位置
+        website:      個人網站
+        bio:          個人簡介
 
     placeholders:
       shark:

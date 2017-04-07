@@ -5,6 +5,13 @@
 
 table.top_border_none tr:first-child > td { border-top: 0; }
 
+#dashboards {
+  .panel h2 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+}
+
 #sharks {
   .logo img {
     cursor: pointer;
@@ -21,3 +28,12 @@ table.top_border_none tr:first-child > td { border-top: 0; }
     cursor: move;
   }
 }
+
+#users {
+  .avatar img {
+    cursor: pointer;
+    width: 200px;
+    height: 200px;
+  }
+}
+

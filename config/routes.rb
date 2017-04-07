@@ -10,6 +10,14 @@ Rails.application.routes.draw do
         put :update, on: :collection
       end
     end
+
+    resources :users, only: [] do
+      collection do
+        get :profiles
+        patch :update_profile
+        patch :update_password
+      end
+    end
   end
 
   namespace :users do
