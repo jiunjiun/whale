@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170331065756) do
+ActiveRecord::Schema.define(version: 20170405060100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 20170331065756) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["shark_id"], name: "index_bots_on_shark_id", using: :btree
+  end
+
+  create_table "shark_photos", force: :cascade do |t|
+    t.string   "image"
+    t.integer  "position"
+    t.integer  "shark_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shark_id"], name: "index_shark_photos_on_shark_id", using: :btree
   end
 
   create_table "sharks", force: :cascade do |t|
@@ -66,5 +75,6 @@ ActiveRecord::Schema.define(version: 20170331065756) do
   end
 
   add_foreign_key "bots", "sharks"
+  add_foreign_key "shark_photos", "sharks"
   add_foreign_key "sharks", "users"
 end
