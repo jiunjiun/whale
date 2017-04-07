@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     resources :dashboards, only: [:index]
     resources :sharks do
       resources :bots
+      resources :photos, only: [:index, :create, :destroy] do
+        put :update, on: :collection
+      end
     end
   end
 

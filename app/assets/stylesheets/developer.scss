@@ -16,4 +16,8 @@ table.top_border_none tr:first-child > td { border-top: 0; }
     width: 240px;
     height: 126px;
   }
+
+  #dropzone_photo .dz-image-preview {
+    cursor: move;
+  }
 }

@@ -1,6 +1,6 @@
 class Developers::SharksController < DeveloperController
   expose :sharks, -> { current_user.sharks.order(created_at: :desc).paginate(page: params[:page], per_page: 30) }
-  expose :shark,  find: -> (id){ sharks.find_by(id: id) }, build: ->(shark_params, scope){ sharks.build(shark_params) }
+  expose :shark, find: -> (id){ sharks.find_by(id: id) }, build: ->(shark_params, scope){ sharks.build(shark_params) }
 
   def index
   end

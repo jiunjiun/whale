@@ -13,6 +13,7 @@ zh-TW:
 
   dashboard:    Dashboard
   shark:
+  shark_photo: 介紹圖片
 
   meta:
     desc:
@@ -70,6 +71,14 @@ zh-TW:
         gh_url:       GitHub
         created_at:   建立時間
         updated_at:   最後修改
+        info:         主要資訊
+        other:        其他資訊
+        ad_image:     宣傳圖片
+      bot:
+        kind:       類型
+        bot_id:     ID
+        url:        連結
+        created_at: 建立時間
 
     placeholders:
       shark:
