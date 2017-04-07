@@ -5,7 +5,7 @@
         - if shark.logo.url
           == image_tag shark.logo, alt: shark.name, data: {id: 'logo'}
         - else
-          img src="holder.js/128x128?theme=sky&text=Logo&auto=yes" alt="" data-id="logo"/
+          img data-src="holder.js/128x128?theme=sky&text=Logo \n 128x128&size=18&auto=yes" alt="" data-id="logo"/
       .hide
         == f.input :logo
       == f.input :name
@@ -25,7 +25,7 @@
         - if shark.banner.url
           == image_tag shark.banner, alt: shark.name, data: {id: 'banner'}
         - else
-          img src="holder.js/1200x630?theme=sky&text=Banner(1200x630)&auto=yes" alt="" data-id="banner"/
+          img data-src="holder.js/1200x630?theme=sky&text=宣傳圖片 \n 1200x630&size=99&auto=yes" data-id="banner"/
       .hide
         == f.input :banner
 
