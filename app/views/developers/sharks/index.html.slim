@@ -23,8 +23,8 @@ ol.breadcrumb.page-breadcrumb
                 = t('simple_form.labels.shark.cetacea')
               th.col-md-1.text-center data-name="status"
                 = t('simple_form.labels.shark.status')
-              th.col-md-2.text-center data-name="created_at"
-                = t('simple_form.labels.shark.created_at')
+              th.col-md-2.text-center data-name="updated_at"
+                = t('simple_form.labels.shark.updated_at')
           tbody
           - sharks.each do |shark|
             tr
@@ -39,14 +39,20 @@ ol.breadcrumb.page-breadcrumb
               td.text-center
                 - if shark.logo.url
                   span.p-r-1
-                    == image_tag shark.logo, alt: shark.name, size: '24x24'
+                    == image_tag shark.logo, alt: shark.name, size: '24x24', class: 'img-rounded'
                 = shark.name
               td.text-center
                 = KeyValues::Shark::Cetacea.find(shark.cetacea).name
               td.text-center
-                = KeyValues::Shark::Status.find(shark.status).name
+                - case shark.status
+                - when Shark::Status::PROCESSING
+                  span.label
+                    = KeyValues::Shark::Status.find(shark.status).name
+                - when Shark::Status::RELEASE
+                  span.label.label-success
+                    = KeyValues::Shark::Status.find(shark.status).name
               td.text-center
-                = l shark.created_at, format: :ymds
+                = l shark.updated_at, format: :ymdhm
 
         .pull-right
           = will_paginate sharks, renderer: BootstrapPagination::Rails, previous_label: '«', next_label: '»'

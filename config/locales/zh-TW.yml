@@ -79,7 +79,7 @@ zh-TW:
         github_url:   GitHub 連結
         youtube_url:  Youtube 連結
         created_at:   建立時間
-        updated_at:   最後修改
+        updated_at:   更新時間
         info:         主要資訊
         other:        其他資訊
         ad_image:     宣傳圖片
@@ -114,4 +114,5 @@ zh-TW:
       mmddyy: '%m月%d日%Y'
       yymmdd_s: '%Y/%m/%d'
       ymds: '%Y-%m-%d %T'
+      ymdhm: '%Y-%m-%d %H:%M'
       long: '%Y年%m月%d日 %T'
