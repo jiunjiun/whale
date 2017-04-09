@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe Developers::UsersController, type: :controller do
+RSpec.describe Consoles::UsersController, type: :controller do
 
 end

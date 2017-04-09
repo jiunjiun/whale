@@ -1,0 +1,16 @@
+ol.breadcrumb.page-breadcrumb
+  li
+    == link_to t('dashboard'), consoles_root_path
+  li
+    == link_to t('shark'), consoles_sharks_path
+  li
+    == link_to shark.name, consoles_shark_path(shark)
+  li.active
+    = t('helpers.add')
+.page-header
+  .pull-left
+    h1= t('helpers.add')
+
+.row
+  .col-lg-12
+    == render 'form'

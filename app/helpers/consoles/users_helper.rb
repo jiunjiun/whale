@@ -1,0 +1,2 @@
+module Consoles::UsersHelper
+end

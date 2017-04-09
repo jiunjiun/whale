@@ -1,2 +1,0 @@
-module Developers::PhotosHelper
-end

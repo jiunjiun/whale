@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Developers::DashboardsController, type: :controller do
+RSpec.describe Consoles::DashboardsController, type: :controller do
 
   describe "GET #index" do
     it "returns http success" do

@@ -1,0 +1,2 @@
+module Consoles::PhotosHelper
+end

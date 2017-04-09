@@ -1,0 +1,19 @@
+.page-header
+  .pull-left
+    h1= t('backend')
+
+.row#dashboards
+  .col-md-6
+    .panel
+      .panel-body
+        h2.has-divider.text-highlight= t('shark')
+        ul.list-inline
+          li
+            == link_to t('shark'), consoles_sharks_path
+  .col-md-6
+    .panel
+      .panel-body
+        h2.has-divider.text-highlight= t('developer_profile')
+        ul.list-inline
+          li
+            == link_to t('developer_profile'), profiles_consoles_users_path
