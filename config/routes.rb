@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { sessions: 'users/sessions',  passwords: 'users/passwords' }, skip: :registrations
+  devise_scope :user do
+    resource :registration,
+      only: [:new, :create],
+      controller: 'users/registrations',
+      path: 'users',
+      path_names: { new: 'sign_up' },
+      as: :user_registration
+  end
 
   namespace :consoles, path: '/', constraints: { subdomain: 'console' } do
     root 'dashboards#index'

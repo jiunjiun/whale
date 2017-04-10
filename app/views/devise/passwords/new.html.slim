@@ -1,0 +1,21 @@
+.page-signin-header.p-a-2.text-sm-center.bg-white
+  == link_to root_path, class: 'px-demo-brand px-demo-brand-lg text-default' do
+    span.px-demo-logo.bg-primary.m-t-0
+      span.px-demo-logo-1
+      span.px-demo-logo-2
+      span.px-demo-logo-3
+      span.px-demo-logo-4
+      span.px-demo-logo-5
+      span.px-demo-logo-6
+      span.px-demo-logo-7
+      span.px-demo-logo-8
+      span.px-demo-logo-9
+    = t('title')
+  == link_to t('sign_in'), new_user_session_path, class: 'btn btn-primary'
+
+#page-signin-form.page-signin-container
+  h2.m-t-0.m-b-4.text-xs-center.font-weight-semibold.font-size-20= t('users.forogt_password')
+  == simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'panel p-a-4'}) do |f|
+    == f.error_notification
+    == f.input :email, required: true, autofocus: true
+    == f.button :submit, t('users.send_reset_password'), class: 'btn btn-block btn-lg btn-primary m-t-3'
