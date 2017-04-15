@@ -14,7 +14,6 @@ table.top_border_none tr:first-child > td { border-top: 0; }
 
 #sharks {
   .logo img {
-    cursor: pointer;
     width: 128px;
     height: 128px;
   }
@@ -22,6 +21,12 @@ table.top_border_none tr:first-child > td { border-top: 0; }
   .banner img {
     width: 240px;
     height: 126px;
+  }
+
+  .upload {
+    &.logo img, &.banner img {
+      cursor: pointer;
+    }
   }
 
   #dropzone_photo .dz-image-preview {
