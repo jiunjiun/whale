@@ -21,6 +21,20 @@ zh-TW:
     desc:
     keywords:
 
+  sharks:
+    get_bots:       取得機器人
+    info:           相關資訊
+    facebook_fnas:  粉絲專頁
+    web_url:        官方網站
+    github_url:     GitHub
+    other_info:     其他資訊
+    updated_at:     更新時間
+    developer:      開發者
+    developer_info: 開發者資訊
+    goto_dev_web:   造訪網站
+    desc:           描述
+    comment:        評論
+
   helpers:
     you_are_here:               '目前在:'
     are_you_sure:               確定刪除嗎?

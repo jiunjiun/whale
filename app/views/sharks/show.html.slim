@@ -1,0 +1,91 @@
+/! SHOP PRODUCT PAGE
+section#shark.product-page.p-b-0
+  .container
+    .product
+      .row
+        .col-md-3
+          .product-image
+            == image_tag shark.logo, class: 'img-rounded'
+          .bots
+            h2.hide= t('sharks.get_bots')
+            .title= t('sharks.get_bots')
+            ul.list-unstyled
+              - shark.bots.each do |bot|
+                - if bot.kind == Bot::Kind::FACEBOOK
+                  == link_to bot_link(bot), target: '_blank', class: 'facebook_messenger' do
+                    li
+                      == image_tag 'messenger_icons/facebook-messenger.svg', size: '24x24'
+                      | Messenger
+                - if bot.kind == Bot::Kind::LINE
+                  == link_to bot_link(bot), target: '_blank', class: 'line_messenger' do
+                    li
+                      == image_tag 'messenger_icons/line-messenger.svg', size: '24x24'
+                      | Messenger
+          .info
+            h2.hide= t('sharks.info')
+            .title= t('sharks.info')
+            ul.list-unstyled
+              - if shark.facebook_url.present?
+                li
+                  == link_to shark.facebook_url, target: '_blank' do
+                    i.fa.fa-facebook-square
+                    | &nbsp;
+                    = t('sharks.facebook_fnas')
+              - if shark.web_url.present?
+                li
+                  == link_to shark.web_url, target: '_blank' do
+                    i.fa.fa-globe
+                    | &nbsp;
+                    = t('sharks.web_url')
+              - if shark.github_url.present?
+                li
+                  == link_to shark.github_url, target: '_blank' do
+                    i.fa.fa-github
+                    | &nbsp;
+                    = t('sharks.github_url')
+        .col-md-9
+          .product-description
+            .product-title
+              h1= shark.name
+            .product-category= KeyValues::Shark::Cetacea.find(shark.cetacea).name
+            .social
+              .fb-like data-action="like" data-href=request.original_url data-layout="button_count" data-share="true" data-show-faces="true" data-size="large"
+            .seperator.m-t-10
+            .row
+              .col-md-12
+                .shark_carousel.owl-carousel.owl-theme
+                  - if shark.youtube_url.present?
+                    .item-video
+                      a.owl-video href=shark.youtube_url
+                  - shark.photos.each do |photo|
+                    .item
+                      == image_tag photo.image, alt: shark.name
+
+            .seperator
+              i.fa.fa-quote-right
+              h2.hide= t('sharks.desc')
+            p.desc= shark.desc
+
+          .seperator
+            i.fa.fa-send
+            h2.hide= t('sharks.comment')
+          .row.comment
+            .col-md-12.text-center
+              .fb-comments data-href=request.original_url data-numposts="5" data-width="100%"
+
+          .seperator
+            i.fa.fa-flash
+            h2.hide= t('sharks.other_info')
+          .row.other_info
+            .col-md-4
+              strong= t('sharks.updated_at')
+              p= l shark.updated_at, format: :yymmdd
+            .col-md-4
+              strong= t('sharks.developer')
+              p= shark.user.name
+            .col-md-4
+              strong= t('sharks.developer_info')
+              p
+                = shark.user.email
+                br/
+                == link_to t('sharks.goto_dev_web'), shark.user.website, target: '_blank'
