@@ -1,0 +1,25 @@
+/! Header
+header#header.header-transparent
+  #header-wrap
+    .container
+      /! LOGO
+      #logo
+        == link_to root_path, class: 'logo' do
+          | Whale
+          / # == image_tag 'logos/logo@96.png'
+      /! END: LOGO
+      /! MOBILE MENU
+      .nav-main-menu-responsive
+        button.lines-button.x type="button"
+          span.lines
+      /! END: MOBILE MENU
+      /! NAVIGATION MENU
+      .navigation-wrap
+        nav#mainMenu.style-1.main-menu.mega-menu
+          ul.main-menu.nav.nav-pills
+            li
+              == link_to root_path do
+                i.fa.fa-home
+            li
+      /! END: NAVIGATION
+/! END: Header

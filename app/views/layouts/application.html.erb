@@ -1,14 +1,37 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Whale</title>
-    <%= csrf_meta_tags %>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= render 'common/favicon' %>
 
-  <body>
+  <%= display_meta_tags %>
+  <%#= analytics_init if GoogleAnalytics.valid_tracker? %>
+
+  <!-- LOAD GOOGLE FONTS -->
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,800,700,600%7CRaleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
+
+  <%= stylesheet_link_tag  'application', media: 'all' %>
+
+  <!-- LD JSON -->
+  <script type="application/ld+json">
+    <%# render('schemas/main.json').html_safe %>
+  </script>
+
+  <%= csrf_meta_tags %>
+</head>
+<body class="wide" data-animation-icon-path="/images/">
+  <!-- WRAPPER -->
+  <div class="wrapper">
+    <%= render 'common/header' %>
+
     <%= yield %>
-  </body>
+  </div>
+  <%= render 'common/footer' %>
+
+  <%= javascript_include_tag 'application' %>
+  <%= render 'common/facebook_sdk' %>
+</body>
 </html>

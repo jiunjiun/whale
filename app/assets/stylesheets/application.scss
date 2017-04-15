@@ -1,0 +1,103 @@
+//= require Polo/bootstrap/bootstrap.min
+//= require Polo/animateit/animate.min
+//= require Polo/owlcarousel/owl.carousel
+//= require Polo/magnific-popup/magnific-popup
+//= require Polo/theme-base
+//= require Polo/theme-elements
+//= require Polo/responsive
+//= require Polo/color-variations/green-light
+//= require Polo/custom
+
+@import "font-awesome";
+
+a.logo {
+  padding-top: 20px;
+}
+
+// owl-carousel
+.owl-carousel .owl-video-play-icon {
+  height: 128px;
+  width: 128px;
+  margin-left: -60px;
+  margin-top: -40px;
+  background: image-url('icons/youtube_play_icon.png') no-repeat;
+  transition: transform .1s ease;
+
+  &:hover {
+    -ms-transform: scale(1.1,1.1);
+    transform: scale(1.1,1.1);
+  }
+}
+
+#shark {
+  .bots {
+    margin-top: 24px;
+    .title {
+      border-bottom: 1px solid #eee;
+
+      color: #111;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 1.5;
+      margin: 0 0 10px 0;
+      padding-bottom: 10px;
+    }
+
+    ul {
+      li {
+        padding: 8px;
+        text-align: center;
+
+        border: 2px solid #aaa;
+        border-radius: 20px;
+        margin: 8px 8px;
+
+        img {
+          margin-right: 12px;
+        }
+      }
+
+      .facebook_messenger {
+        color: #0084ff;
+        li {
+          border-color: #0084ff;
+        }
+      }
+
+      .line_messenger {
+        color: #3ACE01;
+        li {
+          border-color: #3ACE01;
+        }
+      }
+    }
+  }
+
+  .info {
+    margin-top: 24px;
+
+    .title {
+      border-bottom: 1px solid #eee;
+
+      color: #111;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 1.5;
+      margin: 0 0 10px 0;
+      padding-bottom: 10px;
+    }
+
+    ul li {
+      margin: 8px 8px;
+    }
+  }
+
+  .social {
+    float: right;
+    margin-top: -24px;
+  }
+
+  .other_info {
+    margin: 0 8px;
+  }
+}
