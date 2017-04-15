@@ -5,7 +5,7 @@ class CreateSharks < ActiveRecord::Migration[5.0]
       t.integer  :cetacea
       t.text     :desc
       t.integer  :status, default: 1
-      t.text     :web_url
+      t.text     :website
       t.text     :facebook_url, commit: 'Facebook fans'
       t.text     :github_url,   commit: 'GitHub Url'
       t.text     :youtube_url,  commit: 'Youtube Url'

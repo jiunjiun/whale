@@ -37,6 +37,6 @@ class Consoles::SharksController < ConsoleController
   private
   def shark_params
     params.require(:shark)
-          .permit(:name, :cetacea, :desc, :status, :web_url, :facebook_url, :github_url, :youtube_url, :logo, :banner)
+          .permit(:name, :cetacea, :desc, :status, :website, :facebook_url, :github_url, :youtube_url, :logo, :banner)
   end
 end

@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20170405060100) do
     t.integer  "cetacea"
     t.text     "desc"
     t.integer  "status",       default: 1
-    t.text     "web_url"
+    t.text     "website"
     t.text     "facebook_url"
     t.text     "github_url"
     t.text     "youtube_url"

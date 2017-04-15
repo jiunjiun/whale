@@ -2,13 +2,13 @@ class SharksController < ApplicationController
   expose :sharks, -> { Shark.where(status: Shark::Status::RELEASE) }
   expose :shark, find: -> (id){ sharks.find_by(id: id) }
 
-  before_action :update_meta
-
   def index
   end
 
   def show
-    redirect_to root_path unless shark
+    redirect_to root_path and return unless shark
+
+    update_meta
   end
 
   private

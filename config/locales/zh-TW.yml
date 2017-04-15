@@ -25,7 +25,7 @@ zh-TW:
     get_bots:       取得機器人
     info:           相關資訊
     facebook_fnas:  粉絲專頁
-    web_url:        官方網站
+    website:        官方網站
     github_url:     GitHub
     other_info:     其他資訊
     updated_at:     更新時間
@@ -100,7 +100,7 @@ zh-TW:
         status:       狀態
         desc:         描述
         cetacea:      類型
-        web_url:      官方網站
+        website:      官方網站
         facebook_url: Facebook 粉絲專頁
         github_url:   GitHub 連結
         youtube_url:  Youtube 連結
@@ -126,7 +126,7 @@ zh-TW:
         name:
         desc:
         cetacea:
-        web_url:  http://rubyonrails.org/
+        website:  http://rubyonrails.org/
         fb_url:   https://www.facebook.com/
         gh_url:   https://github.com/rails/rails
 

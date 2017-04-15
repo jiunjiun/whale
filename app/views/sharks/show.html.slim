@@ -31,12 +31,12 @@ section#shark.product-page.p-b-0
                     i.fa.fa-facebook-square
                     | &nbsp;
                     = t('sharks.facebook_fnas')
-              - if shark.web_url.present?
+              - if shark.website.present?
                 li
-                  == link_to shark.web_url, target: '_blank' do
+                  == link_to shark.website, target: '_blank' do
                     i.fa.fa-globe
                     | &nbsp;
-                    = t('sharks.web_url')
+                    = t('sharks.website')
               - if shark.github_url.present?
                 li
                   == link_to shark.github_url, target: '_blank' do
