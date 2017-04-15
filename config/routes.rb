@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     resources :profiles
   end
 
-  resources :sharks, only: [:index, :show]
+  resources :sharks, only: [:show]
 
   root 'home#index'
 end

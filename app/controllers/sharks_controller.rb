@@ -2,9 +2,6 @@ class SharksController < ApplicationController
   expose :sharks, -> { Shark.where(status: Shark::Status::RELEASE) }
   expose :shark, find: -> (id){ sharks.find_by(id: id) }
 
-  def index
-  end
-
   def show
     redirect_to root_path and return unless shark
 
