@@ -14,6 +14,10 @@ class User < ApplicationRecord
 
   attr_accessor :current_password
 
+  def release_sharks
+    self.sharks.where(status: Shark::Status::RELEASE)
+  end
+
   private
   def setup_info
     self.public_email = self.email

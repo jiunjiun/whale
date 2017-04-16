@@ -1,0 +1,45 @@
+section#developer
+  .container
+    .row
+      .col-md-4.text-center
+        .profile
+          .avatar
+            == image_tag user.avatar, alt: user.name, size: '128x128', class: 'img-rounded img-thumbnail'
+          .info
+            h1= user.name
+            .seperator.m-t-10.m-b-10
+            p
+              == mail_to user.public_email do
+                i.fa.fa-envelope
+                | &nbsp;
+                = user.public_email
+            p
+              == link_to user.website do
+                i.fa.fa-globe
+                | &nbsp;
+                = t('sharks.website')
+            p
+              i.fa.fa-map-marker
+              | &nbsp;
+              = user.location
+      .col-md-8
+        .seperator
+          i.fa.fa-flash
+          h2.hide= t('developers.bots')
+        .bots
+          .row
+            - user.release_sharks.each do |shark|
+              .col-md-3
+                .panel.panel-default
+                  .panel-body.text-center
+                    == link_to shark_path("#{shark.id}-#{shark.name}") do
+                      == image_tag shark.logo, alt: shark.name, class: 'img-responsive img-rounded'
+                      .seperator.m-t-10.m-b-10
+                      h3= shark.name
+        .seperator
+          i.fa.fa-quote-right
+          h2.hide= t('developers.desc')
+        .desc
+          p= user.bio
+
+

@@ -34,6 +34,8 @@ zh-TW:
     goto_dev_web:   造訪網站
     desc:           描述
     comment:        評論
+  developers:
+    desc: 個人簡介
 
   helpers:
     you_are_here:               '目前在:'

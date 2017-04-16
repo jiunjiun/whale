@@ -101,3 +101,24 @@ a.logo {
     margin: 0 8px;
   }
 }
+
+#developer {
+  .profile {
+    .avatar {
+      margin: 16px;
+    }
+
+    p {
+      margin-bottom: 4px;
+      color: #111;
+    }
+  }
+  .bots {
+    .seperator {
+      margin: 5px 0 !important;
+    }
+    h3 {
+      margin: 4px;
+    }
+  }
+}

@@ -82,7 +82,9 @@ section#shark.product-page.p-b-0
               p= l shark.updated_at, format: :yymmdd
             .col-md-4
               strong= t('sharks.developer')
-              p= shark.user.name
+              p
+                == link_to developer_path("#{shark.user.id}-#{shark.user.name}") do
+                  = shark.user.name
             .col-md-4
               strong= t('sharks.developer_info')
               p
