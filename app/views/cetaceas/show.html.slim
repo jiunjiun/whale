@@ -1,0 +1,33 @@
+section#page-title.page-title-parallax.page-title-center.text-dark
+  .container
+    .page-title.col-md-8
+      h1= KeyValues::Shark::Cetacea.find(params[:id].to_i).name
+      / span
+    .breadcrumb.col-md-4
+      ul
+        li
+          == link_to root_path do
+            i.fa.fa-home
+        li
+          a href=""
+            = t('cetacea')
+        li.active
+          == link_to cetacea_path(params[:id]) do
+            = KeyValues::Shark::Cetacea.find(params[:id].to_i).name
+
+section#cetacea
+  .container
+    .row
+      - sharks.each do |shark|
+        .col-md-3
+          .post-thumbnail
+            .post-thumbnail-entry
+              == link_to shark_path("#{shark.id}-#{shark.name}"), class: 'image' do
+                == image_tag shark.logo, alt: shark.name, class: 'img-responsive img-rounded'
+              .post-thumbnail-content
+                span.post-date
+                  i.fa.fa-clock-o
+                  | &nbsp;
+                  = l shark.updated_at, format: :yymmdd
+                h3
+                  == link_to shark.name, shark_path("#{shark.id}-#{shark.name}")

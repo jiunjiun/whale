@@ -29,6 +29,15 @@ a.logo {
   }
 }
 
+#header.header-transparent + .page-title-parallax {
+  padding-top: 136px;
+  padding-bottom: 32px;
+}
+
+.post-thumbnail .post-thumbnail-entry > a.image > img {
+  margin-bottom: 8px;
+}
+
 #shark {
   .bots {
     margin-top: 24px;
@@ -111,14 +120,6 @@ a.logo {
     p {
       margin-bottom: 4px;
       color: #111;
-    }
-  }
-  .bots {
-    .seperator {
-      margin: 5px 0 !important;
-    }
-    h3 {
-      margin: 4px;
     }
   }
 }

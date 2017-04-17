@@ -34,6 +34,7 @@ Rails.application.routes.draw do
 
   resources :sharks, only: [:show]
   resources :developers, only: [:show]
+  resources :cetaceas, only: [:show]
 
   root 'home#index'
 end

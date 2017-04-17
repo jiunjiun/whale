@@ -14,7 +14,7 @@ section#developer
                 | &nbsp;
                 = user.public_email
             p
-              == link_to user.website do
+              == link_to user.website, target: '_blank' do
                 i.fa.fa-globe
                 | &nbsp;
                 = t('sharks.website')
@@ -30,12 +30,17 @@ section#developer
           .row
             - user.release_sharks.each do |shark|
               .col-md-3
-                .panel.panel-default
-                  .panel-body.text-center
-                    == link_to shark_path("#{shark.id}-#{shark.name}") do
+                .post-thumbnail
+                  .post-thumbnail-entry
+                    == link_to shark_path("#{shark.id}-#{shark.name}"), class: 'image' do
                       == image_tag shark.logo, alt: shark.name, class: 'img-responsive img-rounded'
-                      .seperator.m-t-10.m-b-10
-                      h3= shark.name
+                    .post-thumbnail-content
+                      span.post-date
+                        i.fa.fa-clock-o
+                        | &nbsp;
+                        = l shark.updated_at, format: :yymmdd
+                      h3
+                        == link_to shark.name, shark_path("#{shark.id}-#{shark.name}")
         .seperator
           i.fa.fa-quote-right
           h2.hide= t('developers.desc')
