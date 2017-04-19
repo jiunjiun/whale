@@ -4,15 +4,17 @@ header#header.header-transparent
     .container
       /! LOGO
       #logo
-        == link_to root_path, class: 'logo' do
-          | Whale
-          / # == image_tag 'logos/logo@96.png'
-      /! END: LOGO
-      /! MOBILE MENU
+        == link_to t('title'), root_path, class: 'logo'
       .nav-main-menu-responsive
         button.lines-button.x type="button"
           span.lines
       /! END: MOBILE MENU
+      / #top-search
+      /   a#top-search-trigger
+      /     i.fa.fa-search
+      /     i.fa.fa-close
+      /   form action="search-results-page.html" method="get"
+      /     input.form-control name="q" placeholder=("Start typing &amp; press  &quot;Enter&quot;") type="text" value="" /
       /! NAVIGATION MENU
       .navigation-wrap
         nav#mainMenu.style-1.main-menu.mega-menu
@@ -20,6 +22,36 @@ header#header.header-transparent
             li
               == link_to root_path do
                 i.fa.fa-home
-            li
-      /! END: NAVIGATION
-/! END: Header
+            li.dropdown.mega-menu-item
+              a href="#"
+                i.fa.fa-list-ul
+                i.fa.fa-angle-down
+              ul.dropdown-menu
+                li.mega-menu-content
+                  .row
+                    ul
+                      li.mega-menu-title
+                        h4= t('cetacea')
+                    - Shark.cetacea_ids.each do |id|
+                      .col-md-2
+                        ul
+                          li
+                            == link_to KeyValues::Shark::Cetacea.find(id).name, cetacea_path("#{id}-#{KeyValues::Shark::Cetacea.find(id).name}")
+            li.dropdown
+              a href="#"
+                i.fa.fa-user
+                i.fa.fa-angle-down
+              ul.dropdown-menu
+                - if user_signed_in?
+                  li
+                    = link_to consoles_root_url do
+                      = t('developer_backend')
+                  li
+                    = link_to destroy_user_session_path, method: :delete do
+                      = t('sign_out')
+                - else
+                  li
+                    == link_to new_user_session_path do
+                      i.dropdown-icon.fa.fa-sign-in
+                      | &nbsp;&nbsp;
+                      = t('sign_in')

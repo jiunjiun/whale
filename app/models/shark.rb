@@ -13,4 +13,8 @@ class Shark < ApplicationRecord
     PROCESSING = 1
     RELEASE    = 2
   end
+
+  def self.cetacea_ids
+    Shark.all.pluck(:cetacea).uniq.sort
+  end
 end
