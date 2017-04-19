@@ -2,6 +2,8 @@ class Consoles::SharksController < ConsoleController
   expose :sharks, -> { current_user.sharks.order(created_at: :desc).paginate(page: params[:page], per_page: 30) }
   expose :shark, find: -> (id){ sharks.find_by(id: id) }, build: ->(shark_params, scope){ sharks.build(shark_params) }
 
+  before_action :validate_shark
+
   def index
   end
 
@@ -38,5 +40,9 @@ class Consoles::SharksController < ConsoleController
   def shark_params
     params.require(:shark)
           .permit(:name, :cetacea, :desc, :status, :website, :facebook_url, :github_url, :youtube_url, :logo, :banner)
+  end
+
+  def validate_shark
+    redirect_to root_path and return unless shark
   end
 end
