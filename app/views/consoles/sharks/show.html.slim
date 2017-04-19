@@ -9,7 +9,10 @@ ol.breadcrumb.page-breadcrumb
   .pull-left
     h1= shark.name
   .pull-right
-    == link_to t('helpers.edit'), edit_consoles_shark_path(shark), class: 'btn btn-primary btn-3d'
+    .btn-group role="group"
+      - if shark.status == Shark::Status::RELEASE
+        == link_to t('helpers.link'), shark_url(shark, subdomain: nil), target: '_blank', class: 'btn btn-info btn-3d'
+      == link_to t('helpers.edit'), edit_consoles_shark_path(shark), class: 'btn btn-primary btn-3d'
 
 .row#sharks data-id=shark.id
   .col-md-12

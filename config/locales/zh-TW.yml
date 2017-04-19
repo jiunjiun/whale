@@ -47,7 +47,9 @@ zh-TW:
     list:                       清單
     add:                        新增
     edit:                       修改
-    show:                       顯示
+    show:                       檢視
+    preview:                    預覽
+    preview_model:              預覽模式
     update:                     更新
     delete:                     刪除
     back:                       返回

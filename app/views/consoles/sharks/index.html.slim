@@ -30,9 +30,11 @@ ol.breadcrumb.page-breadcrumb
             tr
               td
                 .btn-group
-                  = link_to consoles_shark_path(shark), class: 'btn btn-xs btn-primary btn-3d' do
+                  - if shark.status == Shark::Status::RELEASE
+                    == link_to t('helpers.link'), shark_url(shark, subdomain: nil), target: '_blank', class: 'btn btn-xs btn-info btn-3d'
+                  = link_to consoles_shark_path(shark), class: 'btn btn-xs btn-info btn-3d' do
                     = t('helpers.show')
-                  = link_to edit_consoles_shark_path(shark), class: 'btn btn-xs btn-info btn-3d' do
+                  = link_to edit_consoles_shark_path(shark), class: 'btn btn-xs btn-primary btn-3d' do
                     = t('helpers.edit')
                   = link_to consoles_shark_path(shark), method: :delete, data: {confirm: t('helpers.are_you_sure')}, class: 'btn btn-xs btn-danger btn-3d' do
                     = t('helpers.delete')
@@ -40,7 +42,10 @@ ol.breadcrumb.page-breadcrumb
                 - if shark.logo.url
                   span.p-r-1
                     == image_tag shark.logo, alt: shark.name, size: '24x24', class: 'img-rounded'
-                = shark.name
+                - if shark.status == Shark::Status::RELEASE
+                  == link_to shark.name, shark_url(shark, subdomain: nil), target: '_blank'
+                - else
+                  = shark.name
               td.text-center
                 = KeyValues::Shark::Cetacea.find(shark.cetacea).name
               td.text-center
