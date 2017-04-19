@@ -15,6 +15,6 @@ class Shark < ApplicationRecord
   end
 
   def self.cetacea_ids
-    Shark.all.pluck(:cetacea).uniq.sort
+    Shark.all.where(status: Status::RELEASE).pluck(:cetacea).uniq.sort
   end
 end

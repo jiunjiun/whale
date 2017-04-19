@@ -15,13 +15,15 @@ zh-TW:
   dashboard:    Dashboard
   shark:        專案
   cetacea:      類別
+  search:       搜尋
   shark_photo:  介紹圖片
+  profile:      個人資訊
   developer_profile: 開發者資訊
   developer_backend: 開發者後台
 
   meta:
-    desc:
-    keywords:
+    desc: 從現在開始，你可以找到有趣的Bot，或是你有任何的想法都可以在這裡找到!
+    keywords: Whale,Bot,Messenger
 
   sharks:
     get_bots:       取得機器人
@@ -77,6 +79,10 @@ zh-TW:
     create_fail:          新增失敗
     update_fail:          更新失敗
     destroy_fail:         刪除失敗
+
+    search:
+      result: '搜尋: "%{result}"，找到 %{count} 項'
+      placeholder: search...
 
     submit:
       create: 新增

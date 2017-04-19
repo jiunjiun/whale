@@ -16,8 +16,8 @@ class ApplicationController < ActionController::Base
   def prepare_meta_tags(opts = {})
     title       = opts[:title] || I18n.t('title')
     site        = opts[:site] || ''
-    description = opts[:description]
-    keywords    = opts[:keywords]
+    description = opts[:description] || I18n.t('meta.desc')
+    keywords    = opts[:keywords] || I18n.t('meta.keywords')
 
     defaults = {
       # common
