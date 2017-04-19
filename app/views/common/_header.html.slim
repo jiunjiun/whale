@@ -9,12 +9,12 @@ header#header.header-transparent
         button.lines-button.x type="button"
           span.lines
       /! END: MOBILE MENU
-      / #top-search
-      /   a#top-search-trigger
-      /     i.fa.fa-search
-      /     i.fa.fa-close
-      /   form action="search-results-page.html" method="get"
-      /     input.form-control name="q" placeholder=("Start typing &amp; press  &quot;Enter&quot;") type="text" value="" /
+      #top-search
+        a#top-search-trigger
+          i.fa.fa-search
+          i.fa.fa-close
+        == search_form_for @q, url: search_path, enforce_utf8: false do |f|
+          == f.search_field :name, placeholder: t('helpers.search.placeholder')
       /! NAVIGATION MENU
       .navigation-wrap
         nav#mainMenu.style-1.main-menu.mega-menu
@@ -46,6 +46,9 @@ header#header.header-transparent
                   li
                     = link_to consoles_root_url do
                       = t('developer_backend')
+                  li
+                    = link_to developer_path("#{current_user.id}-#{current_user.name}") do
+                      = t('developer_profile')
                   li
                     = link_to destroy_user_session_path, method: :delete do
                       = t('sign_out')

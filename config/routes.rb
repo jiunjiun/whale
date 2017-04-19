@@ -36,5 +36,7 @@ Rails.application.routes.draw do
   resources :developers, only: [:show]
   resources :cetaceas, only: [:show]
 
+  get :search, to: 'search#index', as: :search
+
   root 'home#index'
 end

@@ -1,0 +1,33 @@
+section#page-title.page-title-parallax.page-title-center.text-dark
+  .container
+    .page-title.col-md-8
+      h1= t('search')
+      / span
+    .breadcrumb.col-md-4
+      ul
+        li
+          == link_to root_path do
+            i.fa.fa-home
+        li
+          a href=""
+            = t('helpers.search.result', {result: params[:q][:name], count: sharks.count})
+
+section
+  .container
+    .row
+      - sharks.each do |shark|
+        .col-md-3
+          .post-thumbnail
+            .post-thumbnail-entry
+              == link_to shark_path("#{shark.id}-#{shark.name}"), class: 'image' do
+                == image_tag shark.logo, alt: shark.name, class: 'img-responsive img-rounded'
+              .post-thumbnail-content
+                span.post-date
+                  i.fa.fa-clock-o
+                  | &nbsp;
+                  = l shark.updated_at, format: :yymmdd
+                h3
+                  == link_to shark.name, shark_path("#{shark.id}-#{shark.name}")
+    .row
+      nav.text-center
+        == will_paginate sharks, renderer: BootstrapPagination::Rails, class: 'pagination-simple', previous_label: '<span aria-hidden="true"><i class="fa fa-angle-left"></i></span>'.html_safe, next_label: '<span aria-hidden="true"><i class="fa fa-angle-right"></i></span>'.html_safe
