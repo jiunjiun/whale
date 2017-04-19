@@ -7,5 +7,6 @@ class AddInfoToUser < ActiveRecord::Migration[5.0]
     add_column :users, :website,      :text
     add_column :users, :bio,          :text, commit: 'biography'
     add_column :users, :avatar,       :string
+    add_column :users, :github,       :string
   end
 end

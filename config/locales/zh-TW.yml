@@ -129,6 +129,7 @@ zh-TW:
       user:
         name:         名稱
         public_email:
+        github:       GitHub
         location:     您的位置
         website:      個人網站
         bio:          個人簡介
@@ -141,6 +142,13 @@ zh-TW:
         website:  http://rubyonrails.org/
         fb_url:   https://www.facebook.com/
         gh_url:   https://github.com/rails/rails
+      user:
+        name:         名稱
+        public_email:
+        github:       GitHub ID
+        location:     Taipei, Taiwan
+        website:      'http://'
+        bio:          blablabla...
 
 
   date:

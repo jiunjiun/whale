@@ -23,12 +23,17 @@ ol.breadcrumb.page-breadcrumb
           == simple_form_for [:consoles, current_user], url: update_profile_consoles_users_path, html: { autocomplete: 'off', id: nil } do |f|
             .col-md-8.col-lg-9
               .p-x-1
-                == f.input :name
-                == f.input :public_email
-                == f.input :location
-                == f.input :website, as: :url
-                == f.input :bio
-                == f.button :submit, class: 'btn-primary btn-3d'
+                .panel
+                  .panel-body
+                    == f.input :name
+                    == f.input :public_email
+                    == f.input :github
+                    == f.input :location
+                    == f.input :website, as: :url
+                    == f.input :bio
+                .panel
+                  .panel-body
+                    == f.button :submit, class: 'btn-primary btn-3d'
             /! Spacer
             .m-t-4.visible-xs.visible-sm
             /! Avatar
@@ -52,10 +57,14 @@ ol.breadcrumb.page-breadcrumb
           .col-md-12
             .p-x-1
               == simple_form_for [:consoles, current_user], url: update_password_consoles_users_path, html: { autocomplete: 'off', id: nil } do |f|
-                == f.input :current_password, required: true
-                == f.input :password, required: true, html5: true
-                == f.input :password_confirmation, required: true
-                == f.button :submit, t('helpers.submit.user.update_password'), class: 'btn-primary btn-3d'
+                .panel
+                  .panel-body
+                    == f.input :current_password, required: true
+                    == f.input :password, required: true, html5: true
+                    == f.input :password_confirmation, required: true
+                .panel
+                  .panel-body
+                    == f.button :submit, t('helpers.submit.user.update_password'), class: 'btn-primary btn-3d'
       /! / Password tab
 
 == content_for :javascripts do

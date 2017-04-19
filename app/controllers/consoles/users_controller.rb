@@ -24,7 +24,7 @@ class Consoles::UsersController < ConsoleController
   def user_params
     params
       .require(:user)
-      .permit(:name, :public_email, :location, :website, :bio, :avatar,
+      .permit(:name, :public_email, :location, :website, :bio, :avatar, :github,
               :current_password, :password, :password_confirmation)
   end
 end
