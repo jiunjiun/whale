@@ -110,6 +110,9 @@ gem 'will_paginate-bootstrap'
 gem 'active_hash'
 gem 'decent_exposure', '3.0.2'
 
+# search
+gem 'ransack', github: 'activerecord-hackery/ransack'
+
 # Style
 gem 'slim'
 gem 'slim-rails'
