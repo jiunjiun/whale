@@ -9,7 +9,6 @@
   <%= render 'common/favicon' %>
 
   <%= display_meta_tags %>
-  <%#= analytics_init if GoogleAnalytics.valid_tracker? %>
 
   <!-- LOAD GOOGLE FONTS -->
   <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,800,700,600%7CRaleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
@@ -20,6 +19,8 @@
   <script type="application/ld+json">
     <%# render('schemas/main.json').html_safe %>
   </script>
+
+  <%= analytics_init if GoogleAnalytics.valid_tracker? %>
 
   <%= csrf_meta_tags %>
 </head>

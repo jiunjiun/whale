@@ -16,6 +16,8 @@
   <!-- styles -->
   <%= stylesheet_link_tag 'console', media: 'all' %>
 
+  <%= analytics_init if GoogleAnalytics.valid_tracker? %>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
