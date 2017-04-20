@@ -57,7 +57,7 @@ section#shark.product-page.p-b-0
                   - if shark.youtube_url.present?
                     .item-video
                       a.owl-video href=shark.youtube_url
-                  - shark.photos.each do |photo|
+                  - shark.photos.order(:position).each do |photo|
                     .item
                       == image_tag photo.image, alt: shark.name
 
