@@ -14,6 +14,12 @@ section#developer
                   i.fa.fa-envelope
                   | &nbsp;
                   = user.public_email
+            - if user.github.present?
+              p
+                == link_to "https://github.com/#{user.github}", target: '_blank' do
+                  i.fa.fa-github-alt
+                  | &nbsp;
+                  = t('sharks.github')
             - if user.website.present?
               p
                 == link_to user.website, target: '_blank' do
