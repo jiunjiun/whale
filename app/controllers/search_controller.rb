@@ -9,7 +9,7 @@ class SearchController < ApplicationController
   private
   def update_meta
     meta_tags_option = {
-      site: "\"#{params[:q][:name]}\" 搜尋結果",
+      site: "\"#{params[:q][:name_cont_any]}\" 搜尋結果",
     }
 
     prepare_meta_tags meta_tags_option

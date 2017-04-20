@@ -10,7 +10,10 @@ class ApplicationController < ActionController::Base
   end
 
   def search_params
-    @q = Shark.ransack(params[:q])
+    q = params[:q].dup
+    q[:name_cont_any] = q[:name_cont_any].split(' ') if q.try(:[], :name_cont_any)
+
+    @q = Shark.ransack(q)
   end
 
   def prepare_meta_tags(opts = {})

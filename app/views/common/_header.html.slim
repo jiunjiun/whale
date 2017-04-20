@@ -14,7 +14,7 @@ header#header.header-transparent
           i.fa.fa-search
           i.fa.fa-close
         == search_form_for @q, url: search_path, enforce_utf8: false do |f|
-          == f.search_field :name, placeholder: t('helpers.search.placeholder')
+          == f.search_field :name_cont_any, placeholder: t('helpers.search.placeholder')
       /! NAVIGATION MENU
       .navigation-wrap
         nav#mainMenu.style-1.main-menu.mega-menu
