@@ -3,6 +3,8 @@
 //= require PixelAdmin/widgets.min
 //= require PixelAdmin/themes/default.min
 
+@import "pixeladmin_logo";
+
 table.top_border_none tr:first-child > td { border-top: 0; }
 
 #dashboards {
