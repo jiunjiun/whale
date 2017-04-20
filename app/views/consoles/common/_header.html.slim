@@ -19,6 +19,8 @@ nav.navbar.px-navbar
   /! Collect the nav links, forms, and other content for toggling
   #px-demo-navbar-collapse.collapse.navbar-collapse
     ul.nav.navbar-nav.navbar-right
+      li
+        == link_to t('back_fontend'), root_url(subdomain: nil), target: '_blank'
       li.dropdown
         a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
           - if current_user.avatar.url
