@@ -30,7 +30,7 @@ ol.breadcrumb.page-breadcrumb
               td.col-md-9
                 .logo
                   - if shark.logo.url
-                    == image_tag shark.logo, alt: shark.name
+                    == image_tag shark.logo.medium, alt: shark.name, class: 'img-rounded'
                   - else
                     img data-src="holder.js/128x128?theme=sky&text=Logo \n 128x128&size=18&auto=yes" alt=""/
             tr

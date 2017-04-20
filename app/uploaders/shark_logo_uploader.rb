@@ -31,15 +31,15 @@ class SharkLogoUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :large do
-    process resize_to_fit: [512, 512]
+    process resize_to_fill: [512, 512]
   end
 
   version :medium do
-    process resize_to_fit: [128, 128]
+    process resize_to_fill: [128, 128]
   end
 
   version :samll do
-    process resize_to_fit: [64, 64]
+    process resize_to_fill: [64, 64]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

@@ -23,7 +23,7 @@ section#cetacea
           .post-thumbnail
             .post-thumbnail-entry
               == link_to shark_path("#{shark.id}-#{shark.name}"), class: 'image' do
-                == image_tag shark.logo, alt: shark.name, class: 'img-responsive img-rounded'
+                == image_tag shark.logo.large, alt: shark.name, class: 'img-responsive img-rounded'
               .post-thumbnail-content
                 span.post-date
                   i.fa.fa-clock-o
