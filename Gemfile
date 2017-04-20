@@ -67,6 +67,13 @@ group :development, :test do # 也包含 test 是為了讓寫 test case 時也�
   gem "rspec-rails"
   gem "factory_girl_rails"
 
+  # deployment
+  gem "capistrano", "~> 3.8"
+  gem 'capistrano-rails', '~> 1.2'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+  gem 'capistrano-passenger'
+
   gem "rails-erd"
 end
 
@@ -89,6 +96,9 @@ gem 'simple_form'
 # upload
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
+gem "fog-google"
+gem "google-api-client", ">= 0.6.2", "< 0.9"
+gem "mime-types"
 
 # Settings
 gem "settingslogic"
