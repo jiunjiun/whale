@@ -109,6 +109,16 @@ a.logo {
   .other_info {
     margin: 0 8px;
   }
+
+  .shark_carousel .item img{
+    display: block;
+    width: auto;
+    margin: 0 auto;
+
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
 }
 
 #developer {
