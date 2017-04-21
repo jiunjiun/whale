@@ -55,6 +55,6 @@ header#header.header-transparent
                 - else
                   li
                     == link_to new_user_session_path do
-                      i.dropdown-icon.fa.fa-sign-in
-                      | &nbsp;&nbsp;
                       = t('sign_in')
+                    == link_to new_user_registration_path do
+                      = t('sign_up')
