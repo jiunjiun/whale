@@ -13,8 +13,10 @@
         == f.input :logo
       == f.input :name
       == f.input :cetacea, collection: KeyValues::Shark::Cetacea.id_options, prompt: t('helpers.plz_select')
-      == f.input :status,  collection: shark_status_collection, prompt: t('helpers.plz_select')
       == f.input :desc
+
+      .m-y-1.b-t-1.border-panel
+      == f.input :status,  collection: shark_status_collection, prompt: t('helpers.plz_select')
 
   .panel.colourable
     /! Default panel contents
