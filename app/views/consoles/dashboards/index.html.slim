@@ -10,6 +10,8 @@
         ul.list-inline
           li
             == link_to t('shark'), consoles_sharks_path
+          li
+            == link_to "#{t('helpers.add')}#{t('shark')}", new_consoles_shark_path
   .col-md-6
     .panel
       .panel-body

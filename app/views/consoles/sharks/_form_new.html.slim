@@ -11,6 +11,30 @@
       == f.input :name
       == f.input :cetacea, collection: KeyValues::Shark::Cetacea.id_options, prompt: t('helpers.plz_select')
 
+      br/
+      #accordion.panel-group
+        .panel
+          .panel-heading
+            a.accordion-toggle.collapsed.text-center aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#more"
+              = t('helpers.more')
+          #more.panel-collapse.collapse aria-expanded="false" style=("height: 0px;")
+            .panel-body
+              .panel.colourable
+                /! Default panel contents
+                .panel-heading
+                  span.panel-title= t('simple_form.labels.shark.info')
+                .panel-body
+                  == f.input :desc
+              br/
+              .panel.colourable
+                /! Default panel contents
+                .panel-heading
+                  span.panel-title= t('simple_form.labels.shark.other')
+                .panel-body
+                  == f.input :website, as: :url
+                  == f.input :facebook_url, as: :url
+                  == f.input :github_url, as: :url
+                  == f.input :youtube_url, as: :url
   .panel
     .panel-body
       .col-md-12

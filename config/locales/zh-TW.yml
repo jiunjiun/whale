@@ -61,6 +61,7 @@ zh-TW:
     description:                描述
     password_change:            密碼修改
     top:                        最新文章
+    more:                       更多
     read_more:                  繼續閱讀
     page_name:                  頁面
     last_time:                  最後更新
