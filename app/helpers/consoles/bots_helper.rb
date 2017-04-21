@@ -17,6 +17,7 @@ module Consoles::BotsHelper
     when Bot::Kind::LINE
       "https://line.me/R/ti/p/#{bot.bot_id}"
     when Bot::Kind::TELEGRAM
+      "https://telegram.me/#{bot.bot_id.delete('@')}"
     end
   end
 end

@@ -95,7 +95,7 @@ module KeyValues
       self.data = [
         {id: 1,  code: 'facebook', name: 'Facebook'},
         {id: 2,  code: 'line',     name: 'Line'},
-        # {id: 3,  code: 'telegram', name: 'Telegram'},
+        {id: 3,  code: 'telegram', name: 'Telegram'},
 
         # {id: 99, code: 'other',    name: '其他'},
       ]

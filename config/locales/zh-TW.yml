@@ -61,7 +61,7 @@ zh-TW:
     description:                描述
     password_change:            密碼修改
     top:                        最新文章
-    more:                       更多
+    more_option:                更多選項
     read_more:                  繼續閱讀
     page_name:                  頁面
     last_time:                  最後更新
@@ -111,7 +111,7 @@ zh-TW:
     labels:
       shark:
         name:         名稱
-        status:       狀態
+        status:       發佈狀態
         desc:         描述
         cetacea:      類型
         website:      官方網站

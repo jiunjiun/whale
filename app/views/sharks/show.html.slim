@@ -21,6 +21,11 @@ section#shark.product-page.p-b-0
                     li
                       == image_tag 'messenger_icons/line-messenger.svg', size: '24x24'
                       | Messenger
+                - if bot.kind == Bot::Kind::TELEGRAM
+                  == link_to bot_link(bot), target: '_blank', class: 'telegram_messenger' do
+                    li
+                      == image_tag 'messenger_icons/telegram-messenger.svg', size: '24x24'
+                      | Messenger
           .info
             h2.hide= t('sharks.info')
             .title= t('sharks.info')
