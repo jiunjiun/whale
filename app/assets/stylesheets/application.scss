@@ -11,7 +11,7 @@
 @import "font-awesome";
 
 a.logo {
-  padding-top: 20px;
+  padding-top: 16px;
 }
 
 // owl-carousel
@@ -40,6 +40,14 @@ a.logo {
 
 .cetacea_label {
   font-weight: normal;
+}
+
+.slider_search {
+  margin-top: 36px;
+  input {
+    width: 60% !important;
+    text-align: center;
+  }
 }
 
 #shark {

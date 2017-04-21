@@ -1,5 +1,5 @@
 zh-TW:
-  title: Whale
+  title: TofuShark
 
   home:     首頁
   sign_in:  登入
@@ -23,7 +23,7 @@ zh-TW:
 
   meta:
     desc: 從現在開始，你可以找到有趣的Bot，或是你有任何的想法都可以在這裡找到!
-    keywords: Whale,Bot,Messenger
+    keywords: TofuShark,Whale,Bot,Messenger
 
   sharks:
     get_bots:       取得機器人
@@ -85,6 +85,7 @@ zh-TW:
     search:
       result: '搜尋: "%{result}"，找到 %{count} 項'
       placeholder: search...
+      placeholder_by_idea: 你今天找到Bot了嗎?
 
     submit:
       create: 新增
