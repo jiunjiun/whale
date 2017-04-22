@@ -29,5 +29,7 @@ section#cetacea
                   i.fa.fa-clock-o
                   | &nbsp;
                   = l shark.updated_at, format: :yymmdd
+                span.cetacea_label.label.label-primary.pull-right
+                  = KeyValues::Shark::Cetacea.find(shark.cetacea).name
                 h3
                   == link_to shark.name, shark_path("#{shark.id}-#{shark.name}")
