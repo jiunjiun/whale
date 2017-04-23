@@ -1,4 +1,5 @@
 defaults: &defaults
+  host:   ''
   domain: 'lvh.me'
   google:
     analytics_code:
