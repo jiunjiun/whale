@@ -1,0 +1,19 @@
+defaults: &defaults
+  domain: 'lvh.me'
+  google:
+    analytics_code:
+    storage:
+     bucket:
+     access_key_id:
+     secret_access_key:
+  facebook:
+    app_id:
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
