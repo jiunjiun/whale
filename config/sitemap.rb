@@ -13,7 +13,7 @@ SitemapGenerator::Sitemap.create do
   end
 
   User.all.each do |user|
-    if user.sharks.count > 0
+    if user.sharks.where(status: Shark::Status::RELEASE).count > 0
       add developer_path("#{user.id}-#{user.name}"), priority: 0.8, changefreq: 'always', lastmod: user.updated_at
     end
   end
