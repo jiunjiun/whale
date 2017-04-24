@@ -56,20 +56,27 @@ section#shark.product-page.p-b-0
             .social
               .fb-like data-action="like" data-href=request.original_url data-layout="button_count" data-share="true" data-show-faces="true" data-size="large"
             .seperator.m-t-10
-            .row
-              .col-md-12
-                .shark_carousel.owl-carousel.owl-theme
-                  - if shark.youtube_url.present?
-                    .item-video
-                      a.owl-video href=shark.youtube_url
-                  - shark.photos.order(:position).each do |photo|
-                    .item
-                      == image_tag photo.image, alt: shark.name
-
-            .seperator
-              i.fa.fa-quote-right
-              h2.hide= t('sharks.desc')
-            p.desc= shark.desc
+            - if shark.photos.present? or shark.youtube_url.present?
+              .row
+                .col-md-12
+                  - if shark.photos.blank? and shark.youtube_url.present?
+                    iframe width="560" height="315" src=shark_youtube_embed(shark.youtube_url) frameborder="0" allowfullscreen=""
+                  - elsif shark.photos.size == 1 and shark.youtube_url.blank?
+                    .text-center
+                      == image_tag shark.photos.last.image
+                  - else
+                    .shark_carousel.owl-carousel.owl-theme
+                      - if shark.youtube_url.present?
+                        .item.item-video
+                          a.owl-video href=shark.youtube_url
+                      - shark.photos.order(:position).each do |photo|
+                        .item
+                          == image_tag photo.image, alt: shark.name
+            - if shark.desc.present?
+              .seperator
+                i.fa.fa-quote-right
+                h2.hide= t('sharks.desc')
+              p.desc= shark.desc
 
           .seperator
             i.fa.fa-send
