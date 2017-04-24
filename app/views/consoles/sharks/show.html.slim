@@ -82,6 +82,7 @@ ol.breadcrumb.page-breadcrumb
               tr
                 td
                   .btn-group
+                    = link_to t('helpers.edit'), edit_consoles_shark_bot_path(shark, bot), class: 'btn btn-xs btn-primary btn-3d'
                     = link_to consoles_shark_bot_path(shark, bot), method: :delete, data: {confirm: t('helpers.are_you_sure')}, class: 'btn btn-xs btn-danger btn-3d' do
                       = t('helpers.delete')
                 td.text-center

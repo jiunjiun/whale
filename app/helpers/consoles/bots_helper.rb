@@ -13,7 +13,7 @@ module Consoles::BotsHelper
   def bot_link bot
     case bot.kind
     when Bot::Kind::FACEBOOK
-      "https://m.me/#{bot.bot_id}"
+      "https://m.me/#{bot.bot_id.delete('@')}"
     when Bot::Kind::LINE
       "https://line.me/R/ti/p/#{bot.bot_id}"
     when Bot::Kind::TELEGRAM

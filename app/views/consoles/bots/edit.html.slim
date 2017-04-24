@@ -6,11 +6,11 @@ ol.breadcrumb.page-breadcrumb
   li
     == link_to shark.name, consoles_shark_path(shark)
   li.active
-    = t('helpers.add')
+    = KeyValues::Bot::Kind.find(bot.kind).name
 .page-header
   .pull-left
-    h1= t('helpers.add')
+    h1= t('helpers.edit')
 
 .row
   .col-lg-12
-    == render 'form_new'
+    == render 'form_edit'

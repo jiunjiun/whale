@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     root 'dashboards#index'
     resources :dashboards, only: [:index]
     resources :sharks do
-      resources :bots
+      resources :bots, except: [:index, :show]
       resources :photos, only: [:index, :create, :destroy] do
         put :update, on: :collection
       end

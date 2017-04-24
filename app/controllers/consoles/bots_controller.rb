@@ -31,6 +31,10 @@ class Consoles::BotsController < ConsoleController
 
   private
   def bot_params
-    params.require(:bot).permit(:kind, :bot_id)
+    if action_name == 'update'
+      params.require(:bot).permit(:bot_id)
+    else
+      params.require(:bot).permit(:kind, :bot_id)
+    end
   end
 end

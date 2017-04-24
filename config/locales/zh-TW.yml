@@ -128,6 +128,7 @@ zh-TW:
         bot_id:     ID
         url:        連結
         created_at: 建立時間
+        find_bot_id: 不知道Bot的 ID?
       user:
         name:         名稱
         public_email:

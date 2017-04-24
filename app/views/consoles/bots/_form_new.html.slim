@@ -1,0 +1,35 @@
+== simple_form_for([:consoles, shark, bot], html: { autocomplete: 'off' }) do |f|
+  .panel.colourable
+    .panel-body
+      == f.input :kind, collection: bot_collection, prompt: t('helpers.plz_select')
+      == f.input :bot_id
+
+      /! Button trigger modal
+      button.btn.btn-info.btn-sm data-target="#modal-find_bot_id" data-toggle="modal" type="button"
+        = t('simple_form.labels.bot.find_bot_id')
+      /! Modal
+      #modal-find_bot_id.modal.fade tabindex="-1"
+        .modal-dialog.modal-lg
+          .modal-content
+            .modal-header
+              button.close data-dismiss="modal" type="button" ×
+              h4.modal-title= t('simple_form.labels.bot.find_bot_id')
+            .modal-body
+              ul.nav.nav-tabs
+                li.active
+                  a aria-expanded="false" data-toggle="tab" href="#tabs-facebook_id"
+                    | Facebook ID
+                li
+                  a aria-expanded="true" data-toggle="tab" href="#tabs-line_id"
+                    | Line ID
+              .tab-content.tab-content-bordered
+                #tabs-facebook_id.tab-pane.fade.active.in
+                  == image_tag 'docs/find_bot_id/facebook_id.png', alt: 'facebook', class: 'img-responsive'
+                #tabs-line_id.tab-pane.fade
+                  == image_tag 'docs/find_bot_id/line_id.png', alt: 'line', class: 'img-responsive'
+  .panel
+    .panel-body
+      .col-md-12
+        == f.button :submit, class: 'btn-success btn-3d'
+        | &nbsp;&nbsp;
+        == link_to t('helpers.back'), consoles_shark_path(shark), class: 'btn btn-default btn-3d'
