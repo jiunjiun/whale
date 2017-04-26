@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       path_names: { new: 'sign_up' },
       as: :user_registration
   end
+  get 'users/sign_out', to: redirect('/')
 
   namespace :consoles, path: '/', constraints: { subdomain: 'console' } do
     root 'dashboards#index'
