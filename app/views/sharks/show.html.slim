@@ -48,6 +48,14 @@ section#shark.product-page.p-b-0
                     i.fa.fa-github
                     | &nbsp;
                     = t('sharks.github_url')
+          - if shark.user.donate.html.present?
+            .donate
+              h2.hide= t('helpers.donate')
+              .title= t('helpers.donate')
+              .paypal-btn.text-center data-toggle="tooltip" data-placement="top" data-html="true" title=t('helpers.donate_desc_br')
+                == shark.user.donate.filter_html.html_safe
+                p.desc= t('helpers.donate_desc')
+
         .col-md-9
           .product-description
             .product-title
@@ -92,12 +100,12 @@ section#shark.product-page.p-b-0
             .col-md-4
               strong= t('sharks.updated_at')
               p= l shark.updated_at, format: :yymmdd
-            .col-md-4
+            .col-md-4.text-center
               strong= t('sharks.developer')
               p
                 == link_to developer_path("#{shark.user.id}-#{shark.user.name}") do
                   = shark.user.name
-            .col-md-4
+            .col-md-4.text-right
               strong= t('sharks.developer_info')
               p
                 = shark.user.email

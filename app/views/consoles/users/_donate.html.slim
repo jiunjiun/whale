@@ -1,0 +1,17 @@
+.row
+  .col-md-12
+    .p-x-1
+      == simple_form_for [:consoles, current_user, current_user.donate], url: update_donate_consoles_users_path(anchor: 'donate'), html: { autocomplete: 'off', id: nil } do |f|
+        .panel
+          .panel-body
+            p
+              = t('simple_form.labels.user_donate.desc')
+              br/
+              == link_to donate_helps_path(subdomain: nil), target: '_blank' do
+                i.fa.fa-question-circle
+                | &nbsp;
+                = t('simple_form.labels.user_donate.help_link')
+            == f.input :html, input_html: {rows: 12}
+        .panel
+          .panel-body
+            == f.button :submit, class: 'btn-primary btn-3d'

@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :sharks
+  has_one  :donate, class_name: 'UserDonate'
 
   validates_presence_of :name
 
@@ -21,5 +22,8 @@ class User < ApplicationRecord
   private
   def setup_info
     self.public_email = self.email
+
+    # build donate
+    self.build_donate
   end
 end
