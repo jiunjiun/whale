@@ -20,42 +20,40 @@ ol.breadcrumb.page-breadcrumb
       /! Default panel contents
       .panel-heading
         span.panel-title= t('simple_form.labels.shark.info')
-      .panel-body
-        /! Table
-        table.table.top_border_none
-          tbody
-            tr
-              td.col-md-3
-                = t('simple_form.labels.shark.logo')
-              td.col-md-9
-                .logo
-                  - if shark.logo.url
-                    == image_tag shark.logo.medium, alt: shark.name, class: 'img-rounded'
-                  - else
-                    img data-src="holder.js/128x128?theme=sky&text=Logo \n 128x128&size=18&auto=yes" alt=""/
-            tr
-              td.col-md-3
-                = t('simple_form.labels.shark.name')
-              td.col-md-9= shark.name
-            tr
-              td.col-md-3
-                = t('simple_form.labels.shark.status')
-              td.col-md-9
-                - case shark.status
-                - when Shark::Status::PROCESSING
-                  span.label
-                    = KeyValues::Shark::Status.find(shark.status).name
-                - when Shark::Status::RELEASE
-                  span.label.label-success
-                    = KeyValues::Shark::Status.find(shark.status).name
-            tr
-              td.col-md-3
-                = t('simple_form.labels.shark.cetacea')
-              td.col-md-9= KeyValues::Shark::Cetacea.find(shark.cetacea).name
-            tr
-              td.col-md-3
-                = t('simple_form.labels.shark.desc')
-              td.col-md-9= shark.desc
+      table.table.top_border_none
+        tbody
+          tr
+            td.col-md-3
+              = t('simple_form.labels.shark.logo')
+            td.col-md-9
+              .logo
+                - if shark.logo.url
+                  == image_tag shark.logo.large, alt: shark.name, class: 'img-rounded'
+                - else
+                  img data-src="holder.js/128x128?theme=sky&text=Logo \n 128x128&size=18&auto=yes" alt=""/
+          tr
+            td.col-md-3
+              = t('simple_form.labels.shark.name')
+            td.col-md-9= shark.name
+          tr
+            td.col-md-3
+              = t('simple_form.labels.shark.status')
+            td.col-md-9
+              - case shark.status
+              - when Shark::Status::PROCESSING
+                span.label
+                  = KeyValues::Shark::Status.find(shark.status).name
+              - when Shark::Status::RELEASE
+                span.label.label-success
+                  = KeyValues::Shark::Status.find(shark.status).name
+          tr
+            td.col-md-3
+              = t('simple_form.labels.shark.cetacea')
+            td.col-md-9= KeyValues::Shark::Cetacea.find(shark.cetacea).name
+          tr
+            td.col-md-3
+              = t('simple_form.labels.shark.desc')
+            td.col-md-9= shark.desc
 
   .col-md-12
     .panel
@@ -63,36 +61,56 @@ ol.breadcrumb.page-breadcrumb
         span.panel-title Bots
         .panel-heading-controls
             = link_to t('helpers.add'), new_consoles_shark_bot_path(shark), class: 'btn btn-xs btn-primary'
-      .panel-body
-        #shark_bots.panel-group
-          table.table.table-striped
-            thead
-              tr
-                th.col-md-2
-                th.col-md-1.text-center data-name="kind"
-                  = t('simple_form.labels.bot.kind')
-                th.col-md-3.text-center data-name="bot_id"
-                  = t('simple_form.labels.bot.bot_id')
-                th.col-md-4.text-center data-name="url"
-                  = t('simple_form.labels.bot.url')
-                th.col-md-2.text-center data-name="created_at"
-                  = t('simple_form.labels.bot.created_at')
-            tbody
-            - shark.bots.each do |bot|
-              tr
-                td
-                  .btn-group
-                    = link_to t('helpers.edit'), edit_consoles_shark_bot_path(shark, bot), class: 'btn btn-xs btn-primary btn-3d'
-                    = link_to consoles_shark_bot_path(shark, bot), method: :delete, data: {confirm: t('helpers.are_you_sure')}, class: 'btn btn-xs btn-danger btn-3d' do
-                      = t('helpers.delete')
-                td.text-center
-                  = KeyValues::Bot::Kind.find(bot.kind).name
-                td.text-center
-                  = bot.bot_id
-                td.text-center
-                  == bot_link_to(bot)
-                td.text-center
-                  = l bot.created_at, format: :ymdhm
+      table.table.table-striped
+        thead
+          tr
+            th.col-md-2
+            th.col-md-1.text-center data-name="kind"
+              = t('simple_form.labels.bot.kind')
+            th.col-md-3.text-center data-name="bot_id"
+              = t('simple_form.labels.bot.bot_id')
+            th.col-md-4.text-center data-name="url"
+              = t('simple_form.labels.bot.url')
+            th.col-md-2.text-center data-name="created_at"
+              = t('simple_form.labels.bot.created_at')
+        tbody
+        - shark.bots.each do |bot|
+          tr
+            td
+              .btn-group
+                = link_to t('helpers.edit'), edit_consoles_shark_bot_path(shark, bot), class: 'btn btn-xs btn-primary btn-3d'
+                = link_to consoles_shark_bot_path(shark, bot), method: :delete, data: {confirm: t('helpers.are_you_sure')}, class: 'btn btn-xs btn-danger btn-3d' do
+                  = t('helpers.delete')
+            td.text-center
+              = KeyValues::Bot::Kind.find(bot.kind).name
+            td.text-center
+              = bot.bot_id
+            td.text-center
+              == bot_link_to(bot)
+            td.text-center
+              = l bot.created_at, format: :ymdhm
+
+  .col-md-12
+    .panel
+      .panel-heading
+        .panel-title
+          = t('simple_form.labels.shark.donate_link')
+      .px-block-alerts
+        .alert.alert-success
+          button.close data-dismiss="alert" type="button"  ×
+          strong= t('simple_form.labels.shark.donate_desc')
+
+      - if shark.user.donate.html.present?
+        table.table.top_border_none
+          tbody
+            tr
+              td.col-md-3
+                = t('helpers.link')
+              td.col-md-9
+                == link_to shark_donate_url("#{shark.id}-#{shark.name}", subdomain: nil), shark_donate_url("#{shark.id}-#{shark.name}", subdomain: nil), target: '_blank'
+      - else
+        .panel-body
+          == link_to t('simple_form.labels.shark.donate_not'), profiles_consoles_users_path(anchor: 'donate')
 
   .col-md-12
     .panel
@@ -113,42 +131,40 @@ ol.breadcrumb.page-breadcrumb
       /! Default panel contents
       .panel-heading
         span.panel-title= t('simple_form.labels.shark.other')
-      .panel-body
-        /! Table
-        table.table.top_border_none
-          tbody
-            tr
-              td.col-md-3
-                = t('simple_form.labels.shark.website')
-              td.col-md-9
-                - if shark.website
-                  == link_to shark.website, shark.website, target: '_blank'
-            tr
-              td.col-md-3
-                = t('simple_form.labels.shark.facebook_url')
-              td.col-md-9
-                - if shark.facebook_url
-                  == link_to shark.facebook_url, shark.facebook_url, target: '_blank'
-            tr
-              td.col-md-3
-                = t('simple_form.labels.shark.github_url')
-              td.col-md-9
-                - if shark.github_url
-                  == link_to shark.github_url, shark.github_url, target: '_blank'
-            tr
-              td.col-md-3
-                = t('simple_form.labels.shark.youtube_url')
-              td.col-md-9
-                - if shark.youtube_url
-                  == link_to shark.youtube_url, shark.youtube_url, target: '_blank'
-            tr
-              td.col-md-3
-                = t('simple_form.labels.shark.updated_at')
-              td.col-md-9= l shark.updated_at, format: :ymdhm
-            tr
-              td.col-md-3
-                = t('simple_form.labels.shark.created_at')
-              td.col-md-9= l shark.created_at, format: :ymdhm
+      table.table.top_border_none
+        tbody
+          tr
+            td.col-md-3
+              = t('simple_form.labels.shark.website')
+            td.col-md-9
+              - if shark.website
+                == link_to shark.website, shark.website, target: '_blank'
+          tr
+            td.col-md-3
+              = t('simple_form.labels.shark.facebook_url')
+            td.col-md-9
+              - if shark.facebook_url
+                == link_to shark.facebook_url, shark.facebook_url, target: '_blank'
+          tr
+            td.col-md-3
+              = t('simple_form.labels.shark.github_url')
+            td.col-md-9
+              - if shark.github_url
+                == link_to shark.github_url, shark.github_url, target: '_blank'
+          tr
+            td.col-md-3
+              = t('simple_form.labels.shark.youtube_url')
+            td.col-md-9
+              - if shark.youtube_url
+                == link_to shark.youtube_url, shark.youtube_url, target: '_blank'
+          tr
+            td.col-md-3
+              = t('simple_form.labels.shark.updated_at')
+            td.col-md-9= l shark.updated_at, format: :ymdhm
+          tr
+            td.col-md-3
+              = t('simple_form.labels.shark.created_at')
+            td.col-md-9= l shark.created_at, format: :ymdhm
 
   .col-md-12
     .panel.colourable
