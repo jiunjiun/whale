@@ -42,5 +42,12 @@ Rails.application.routes.draw do
 
   get :search, to: 'search#index', as: :search
 
+  resources :helps, only: [] do
+    collection do
+      get :donate
+    end
+  end
+
+
   root 'home#index'
 end
