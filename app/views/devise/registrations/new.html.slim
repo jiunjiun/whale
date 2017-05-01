@@ -14,7 +14,8 @@
   == link_to t('sign_in'), new_user_session_path, class: 'btn btn-primary'
 
 .page-signup-container
-  h2.m-t-0.m-b-4.text-xs-center.font-weight-semibold.font-size-20= t('users.create_account')
+  h1.m-t-0.m-b-4.text-xs-center.font-weight-semibold.font-size-20= t('users.create_account')
+  h2.hide= t('users.create_account')
   == simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'panel p-a-4'}) do |f|
     == f.error_notification
     == f.input :name, required: true, autofocus: true
