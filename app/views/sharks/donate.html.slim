@@ -1,0 +1,40 @@
+/! SHOP PRODUCT PAGE
+section#shark_donate.p-b-0
+  .container
+    .row.text-center
+      .col-md-12.logo
+        == link_to shark_path("#{shark.id}-#{shark.name}") do
+          == image_tag shark.logo.large, class: 'img-rounded'
+      .col-md-12
+        .title
+          == link_to shark_path("#{shark.id}-#{shark.name}") do
+            h1= shark.name
+      .col-md-12
+        .seperator.m-t-10.m-b-10
+
+    .row.donate.text-center
+      .col-md-12
+        h2.hide= t('helpers.donate')
+        .paypal-btn
+          == shark.user.donate.filter_html({size: 'large'}).html_safe
+          p.desc= t('helpers.donate_page_desc')
+    .row
+      .col-md-12
+        .seperator
+          i.fa.fa-flash
+          h2.hide= t('sharks.other_info')
+    .row.other_info
+      .col-xs-4
+        strong= t('sharks.updated_at')
+        p= l shark.updated_at, format: :yymmdd
+      .col-xs-4.text-center
+        strong= t('sharks.developer')
+        p
+          == link_to developer_path("#{shark.user.id}-#{shark.user.name}") do
+            = shark.user.name
+      .col-xs-4.text-right
+        strong= t('sharks.developer_info')
+        p
+          = shark.user.email
+          br/
+          == link_to t('sharks.goto_dev_web'), shark.user.website, target: '_blank'

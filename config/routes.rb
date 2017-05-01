@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       collection do
         get :profiles
         patch :update_profile
+        patch :update_donate
         patch :update_password
       end
     end
@@ -33,11 +34,20 @@ Rails.application.routes.draw do
     resources :profiles
   end
 
-  resources :sharks, only: [:show]
+  resources :sharks, only: [:show] do
+    get :donate
+  end
   resources :developers, only: [:show]
   resources :cetaceas, only: [:show]
 
   get :search, to: 'search#index', as: :search
+
+  resources :helps, only: [] do
+    collection do
+      get :donate
+    end
+  end
+
 
   root 'home#index'
 end

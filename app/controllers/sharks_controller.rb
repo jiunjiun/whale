@@ -7,6 +7,12 @@ class SharksController < ApplicationController
     update_meta
   end
 
+  def donate
+    redirect_to shark_path("#{shark.id}-#{shark.name}") and return unless shark.user.donate.html.present?
+
+    update_meta
+  end
+
   private
   def update_meta
     meta_tags_option = {

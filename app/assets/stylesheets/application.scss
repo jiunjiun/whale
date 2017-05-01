@@ -125,6 +125,41 @@ a.logo {
     }
   }
 
+  .donate {
+    margin-top: 24px;
+
+    .title {
+      border-bottom: 1px solid #eee;
+
+      color: #111;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 1.5;
+      margin: 0 0 10px 0;
+      padding-bottom: 10px;
+    }
+
+    .paypal-btn {
+      margin-top: 20px;
+
+      .desc { display: none; }
+
+      @media (max-width: 479px) {
+        .desc { display: block; }
+      }
+    }
+
+    form table{
+      width: 100%;
+      select {
+        min-width: 28%;
+        display: inline-block;
+        margin: 16px 0;
+        height: 40px;
+      }
+    }
+  }
+
   .social {
     float: right;
     margin-top: -24px;
@@ -141,6 +176,31 @@ a.logo {
 
     @media (max-width: 767px) {
       width: 100%;
+    }
+  }
+}
+
+#shark_donate {
+  .logo img {
+    width: 50%;
+    max-width: 300px;
+  }
+  .donate {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    p {
+      margin: 0;
+      padding-top: 16px;
+    }
+
+    form table{
+      width: 100%;
+      select {
+        min-width: 28%;
+        display: inline-block;
+        margin: 16px 0;
+        height: 40px;
+      }
     }
   }
 }

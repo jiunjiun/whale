@@ -38,6 +38,10 @@ zh-TW:
     goto_dev_web:   造訪網站
     desc:           描述
     comment:        評論
+
+  helps:
+    donate: 贊助（Donate）教學
+
   developers:
     desc: 個人簡介
 
@@ -75,6 +79,10 @@ zh-TW:
     plz_select:                 請選擇
     profile:                    個人資料
     update_password:            修改密碼
+    donate:                     贊助
+    donate_desc:                如果你覺得這個服務很好可以贊助我
+    donate_page_desc:           如果你覺得這個服務很好可以點選上面贊助我
+    donate_desc_br:             如果你覺得這個服務很好<br/>可以贊助我
 
     successfully_created: 新增成功 # Your profile was successfully created.
     successfully_updated: 更新成功 # Your profile was successfully updated.
@@ -123,6 +131,10 @@ zh-TW:
         info:         主要資訊
         other:        其他資訊
         ad_image:     宣傳圖片
+        donate_link:  PayPal贊助連結
+        donate_desc:  提供簡單的PayPal贊助（Donate）頁面，你可以嵌入到Bot對話中
+        donate_not:   你尚未提供PayPal贊助（Donate）資訊，趕快新增吧!
+
       bot:
         kind:       類型
         bot_id:     ID
@@ -136,6 +148,11 @@ zh-TW:
         location:     您的位置
         website:      個人網站
         bio:          個人簡介
+      user_donate:
+        desc:       提供開發者簡單的贊助頁面，只需要簡單的步驟，就可以嵌入到你的Bot。目前提供：PayPal
+        help_link:  使用教學
+        html:       Html Code
+
 
     placeholders:
       shark:

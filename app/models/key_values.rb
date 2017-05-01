@@ -101,4 +101,12 @@ module KeyValues
       ]
     end
   end
+
+  module Donate
+    class Kind < KeyValues::Base
+      self.data = [
+        {id:  1,  code: 'paypal',  name: 'PayPal'},
+      ]
+    end
+  end
 end

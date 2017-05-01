@@ -1,0 +1,326 @@
+section#page-title.page-title-parallax.page-title-center.text-dark
+  .container
+    .page-title.col-md-8
+      h1= t('helps.donate')
+      / span
+    .breadcrumb.col-md-4
+      ul
+        li
+          == link_to root_path do
+            i.fa.fa-home
+        li
+          a href=""
+            = t('help')
+        li.active
+          == link_to t('helps.donate'), donate_helps_path
+
+
+section#helps_donate
+  .container
+    .hr-title.hr-long.center
+      abbr 註冊PayPal
+    .row
+      .col-md-6
+        .featured-box
+          .effect.social-links
+            == image_tag 'helps/donate/step_1.png', alt: 'donate_step_1'
+            .image-box-content
+              p
+                a data-lightbox-type="image" href=asset_path('helps/donate/step_1.png')
+                  i.fa.fa-expand
+      .col-md-6
+        p.lead
+          | PayPal 官網連結：
+          == link_to 'https://www.paypal.com/tw/home', 'https://www.paypal.com/tw/home', target: '_blank'
+    br/
+    .row
+      .col-md-6
+        .featured-box
+          .effect.social-links
+            == image_tag 'helps/donate/step_2.png', alt: 'donate_step_2'
+            .image-box-content
+              p
+                a data-lightbox-type="image" href=asset_path('helps/donate/step_2.png')
+                  i.fa.fa-expand
+      .col-md-6
+        p.lead
+          | 選擇個人用戶，並點選
+          code 立即註冊
+    br/
+    .row
+      .col-md-6
+        .featured-box
+          .effect.social-links
+            == image_tag 'helps/donate/step_3.png', alt: 'donate_step_3'
+            .image-box-content
+              p
+                a data-lightbox-type="image" href=asset_path('helps/donate/step_3.png')
+                  i.fa.fa-expand
+      .col-md-6
+        p.lead
+          | 填寫基本資料，並點選
+          code 繼續
+    br/
+    .row
+      .col-md-6
+        .featured-box
+          .effect.social-links
+            == image_tag 'helps/donate/step_4.png', alt: 'donate_step_4'
+            .image-box-content
+              p
+                a data-lightbox-type="image" href=asset_path('helps/donate/step_4.png')
+                  i.fa.fa-expand
+      .col-md-6
+        p.lead
+          | 填寫基本資料，並點選
+          code 同意並建立用戶
+    br/
+    .row
+      .col-md-6
+        .featured-box
+          .effect.social-links
+            == image_tag 'helps/donate/step_5.png', alt: 'donate_step_5'
+            .image-box-content
+              p
+                a data-lightbox-type="image" href=asset_path('helps/donate/step_5.png')
+                  i.fa.fa-expand
+      .col-md-6
+        p.lead
+          | 填寫卡號資訊
+          code 連結卡片
+          | ，或是選擇
+          code 稍後再進行
+    br/
+    .row
+      .col-md-6
+        .featured-box
+          .effect.social-links
+            == image_tag 'helps/donate/step_6.png', alt: 'donate_step_6'
+            .image-box-content
+              p
+                a data-lightbox-type="image" href=asset_path('helps/donate/step_6.png')
+                  i.fa.fa-expand
+      .col-md-6
+        p.lead
+          | 註冊完成！
+        p.lead
+          | 可以點擊中間下面的
+          code 前往你的帳戶
+    br/
+
+    .hr-title.hr-long.center
+      abbr 建立贊助（DONATE）按鈕
+    .row
+      .col-md-6
+        .featured-box
+          .effect.social-links
+            == image_tag 'helps/donate/step_7.png', alt: 'donate_step_7'
+            .image-box-content
+              p
+                a data-lightbox-type="image" href=asset_path('helps/donate/step_7.png')
+                  i.fa.fa-expand
+      .col-md-6
+        p.lead
+          | 在建立贊助（DONATE），需要先完成PayPal
+          code Email認證、信用卡／扣帳卡
+          | 設定
+    br/
+    .row
+      .col-md-6
+        .featured-box
+          .effect.social-links
+            == image_tag 'helps/donate/step_8.png', alt: 'donate_step_8'
+            .image-box-content
+              p
+                a data-lightbox-type="image" href=asset_path('helps/donate/step_8.png')
+                  i.fa.fa-expand
+      .col-md-6
+        p.lead
+          | 在上圖的同一頁面，左邊
+          code 銷售工具
+          | 項目，點選
+          code 賣家偏好設定
+    br/
+    .row
+      .col-md-6
+        .featured-box
+          .effect.social-links
+            == image_tag 'helps/donate/step_9.png', alt: 'donate_step_9'
+            .image-box-content
+              p
+                a data-lightbox-type="image" href=asset_path('helps/donate/step_9.png')
+                  i.fa.fa-expand
+      .col-md-6
+        p.lead
+          | 點擊
+          code 線上銷售
+          | 中，
+          code PayPal按鈕
+          | 項目最後面的
+          code 更新
+    br/
+    .row
+      .col-md-6
+        .featured-box
+          .effect.social-links
+            == image_tag 'helps/donate/step_10.png', alt: 'donate_step_10'
+            .image-box-content
+              p
+                a data-lightbox-type="image" href=asset_path('helps/donate/step_10.png')
+                  i.fa.fa-expand
+      .col-md-6
+        p.lead
+          | 在畫面右邊
+          code 相關項目
+          | 點選
+          code 建立新按鈕
+    br/
+
+    .row
+      .tabs.simple
+        ul.tabs-navigation
+          li.active
+            a href="#multiple"
+              | 多項贊助（建議）
+          li
+            a href="#once"
+              | 單一贊助
+        .tabs-content
+          #multiple.tab-pane.active
+            .row
+              .col-md-6
+                .featured-box
+                  .effect.social-links
+                    == image_tag 'helps/donate/step_14.png', alt: 'donate_step_14'
+                    .image-box-content
+                      p
+                        a data-lightbox-type="image" href=asset_path('helps/donate/step_14.png')
+                          i.fa.fa-expand
+              .col-md-6
+                ol
+                  li
+                    p.lead
+                      | 選擇按鈕類型為
+                      code 立即購
+                  li
+                    p.lead
+                      | 設定
+                      code 物品名稱
+                  li
+                    p.lead
+                      | 在
+                      code 自訂按鈕
+                      | 勾選
+                      code 新增含價格/選項的下拉式選單
+                  li
+                    p.lead
+                      | 設定
+                      code 下拉式選單名稱
+                  li
+                    p.lead
+                      | 設定
+                      code 選單的項目
+                      |（贊助金額清單）
+                  li
+                    p.lead
+                      | 設定完後記得點
+                      code 完成
+            br/
+            .row
+              .col-md-6
+                .featured-box
+                  .effect.social-links
+                    == image_tag 'helps/donate/step_15.png', alt: 'donate_step_15'
+                    .image-box-content
+                      p
+                        a data-lightbox-type="image" href=asset_path('helps/donate/step_15.png')
+                          i.fa.fa-expand
+              .col-md-6
+                p.lead
+                  | 確認自訂按鈕，按下
+                  code 建立按鈕
+            br/
+            .row
+              .col-md-6
+                .featured-box
+                  .effect.social-links
+                    == image_tag 'helps/donate/step_16.png', alt: 'donate_step_16'
+                    .image-box-content
+                      p
+                        a data-lightbox-type="image" href=asset_path('helps/donate/step_16.png')
+                          i.fa.fa-expand
+              .col-md-6
+                p.lead
+                  | 按鈕建立完成！
+                p.lead
+                  | 將畫面的
+                  code html
+                  | 複製
+          #once.tab-pane
+            .row
+              .col-md-6
+                .featured-box
+                  .effect.social-links
+                    == image_tag 'helps/donate/step_11.png', alt: 'donate_step_11'
+                    .image-box-content
+                      p
+                        a data-lightbox-type="image" href=asset_path('helps/donate/step_11.png')
+                          i.fa.fa-expand
+              .col-md-6
+                ol
+                  li
+                    p.lead
+                      | 選擇按鈕類型為
+                      code 立即購
+                  li
+                    p.lead
+                      | 設定
+                      code 物品名稱
+                  li
+                    p.lead
+                      | 設定
+                      code 價格
+                      |（贊助金額）
+                  li
+                    p.lead
+                      | 設定完後，點選下面的
+                      code 建立按鈕
+            br/
+            .row
+              .col-md-6
+                .featured-box
+                  .effect.social-links
+                    == image_tag 'helps/donate/step_12.png', alt: 'donate_step_12'
+                    .image-box-content
+                      p
+                        a data-lightbox-type="image" href=asset_path('helps/donate/step_12.png')
+                          i.fa.fa-expand
+              .col-md-6
+                p.lead
+                  | 按鈕建立完成！
+                p.lead
+                  | 將畫面的
+                  code html
+                  | 複製
+
+    br/
+    .row
+      .col-md-6
+        .featured-box
+          .effect.social-links
+            == image_tag 'helps/donate/step_13.png', alt: 'donate_step_13'
+            .image-box-content
+              p
+                a data-lightbox-type="image" href=asset_path('helps/donate/step_13.png')
+                  i.fa.fa-expand
+      .col-md-6
+        p.lead
+          | 到後台
+          code 開發者資訊
+          | 的
+          code 贊助
+          | 將複製的
+          code html
+          | 貼上並更新即可！
+        p.lead
+          | 完成！
