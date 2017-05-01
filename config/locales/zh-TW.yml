@@ -22,8 +22,11 @@ zh-TW:
   developer_backend: 開發者後台
 
   meta:
-    desc: 從現在開始，你可以找到有趣的Bot，或是你有任何的想法都可以在這裡找到!
+    desc: TofuShark是一個很棒的Bot平台，收集了各式各樣有趣的Bot，讓你簡單找到Facebook(Fb) Messenger、Line、Telegram Bot。你還可以自己上架自己的Bot，我們提供分析、贊助功能，讓你的Bot更容易被找到被使用！
     keywords: TofuShark,Whale,Bot,Messenger
+
+  home:
+    desc: 從現在開始，你可以找到有趣的Bot，或是你有任何的想法都可以在這裡找到！
 
   sharks:
     get_bots:       取得機器人
@@ -41,6 +44,7 @@ zh-TW:
 
   helps:
     donate: 贊助（Donate）教學
+    donate_desc: 贊助（Donate）教學頁面，提供開發者簡單的贊助頁面，只需要簡單的步驟，就可以嵌入到你的Bot。
 
   developers:
     desc: 個人簡介

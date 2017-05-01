@@ -6,8 +6,8 @@
       .slide-captions.text-center.text-dark
         /! Captions
         h1= t('title')
-        h2.hide= t('meta.desc')
-        p.lead= t('meta.desc')
+        h2.hide= t('home.desc')
+        p.lead= t('home.desc')
         /! End: Captions
       .slider_search.slide-captions.text-center
         == search_form_for @q, url: search_path, enforce_utf8: false, class: 'form-inline' do |f|

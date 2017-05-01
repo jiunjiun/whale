@@ -18,4 +18,8 @@
         h2.has-divider.text-highlight= t('developer_profile')
         ul.list-inline
           li
-            == link_to t('developer_profile'), profiles_consoles_users_path
+            == link_to t('helpers.profile'), profiles_consoles_users_path
+          li
+            == link_to t('helpers.donate'), profiles_consoles_users_path(anchor: 'donate')
+          li
+            == link_to t('helpers.update_password'), profiles_consoles_users_path(anchor: 'password')

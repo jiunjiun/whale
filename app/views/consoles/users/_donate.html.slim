@@ -7,7 +7,7 @@
             p
               = t('simple_form.labels.user_donate.desc')
               br/
-              == link_to donate_helps_path(subdomain: nil), target: '_blank' do
+              == link_to donate_helps_url(subdomain: nil), target: '_blank' do
                 i.fa.fa-question-circle
                 | &nbsp;
                 = t('simple_form.labels.user_donate.help_link')
