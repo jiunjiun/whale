@@ -25,6 +25,8 @@
   <%= analytics_init if GoogleAnalytics.valid_tracker? %>
 
   <%= csrf_meta_tags %>
+
+  <%= render_user_google_analytics_snippet %>
 </head>
 <body class="wide" data-animation-icon-path="/images/">
   <!-- WRAPPER -->
