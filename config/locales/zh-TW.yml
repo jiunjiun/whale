@@ -149,6 +149,7 @@ zh-TW:
         name:         名稱
         public_email:
         github:       GitHub
+        tracking_id:  GA 追蹤編號（Google Analytics ID）
         location:     您的位置
         website:      個人網站
         bio:          個人簡介
@@ -170,10 +171,14 @@ zh-TW:
         name:         名稱
         public_email:
         github:       GitHub ID
+        tracking_id:  UA-21000001-7
         location:     Taipei, Taiwan
         website:      'http://'
         bio:          blahblah...
 
+    hints:
+      user:
+        tracking_id: 在此輸入您的 Google Analytics 追蹤 ID。
 
   date:
     formats:
