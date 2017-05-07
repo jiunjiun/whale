@@ -1,5 +1,5 @@
 class SharksController < ApplicationController
-  expose :shark, find: -> (id){ Shark.where(status: Shark::Status::RELEASE).find_by(id: id) }
+  expose :shark, find: -> (id){ Shark.includes(:photos).where(status: Shark::Status::RELEASE).find_by(id: id) }
 
   def show
     redirect_to root_path and return unless shark
